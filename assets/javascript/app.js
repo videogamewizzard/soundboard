@@ -70,6 +70,12 @@ $("button").on("click", event => {
     case "momma":
       scrollToMomma();
       break;
+    case "laurel":
+      scrollToLaurel();
+      break;
+    case "lotto":
+      scrollToLotto();
+      break;
     case "vampires":
       vampires.play();
       break;
@@ -110,6 +116,7 @@ const scrollToAaron = () => {
     },
     500
   );
+  $("#navbarNav").collapse("hide");
 };
 
 const scrollToMomma = () => {
@@ -119,4 +126,13 @@ const scrollToMomma = () => {
     },
     500
   );
+  $("#navbarNav").collapse("hide");
+};
+
+const scrollToLaurel = () => {
+  $("#navbarNav").collapse("hide");
+};
+
+const scrollToLotto = () => {
+  $("#navbarNav").collapse("hide");
 };

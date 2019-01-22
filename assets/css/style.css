@@ -4,6 +4,10 @@ button {
   cursor: pointer;
 }
 
+.name {
+  font-size: 14px !important;
+}
+
 .card {
   text-align: center;
 }
