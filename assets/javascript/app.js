@@ -16,6 +16,7 @@ const odds = new Audio(`${path}odds.mp3`);
 const scam = new Audio(`${path}scam.mp3`);
 const wtf = new Audio(`${path}wtf.mp3`);
 const delusion = new Audio(`${path}delusion.mp3`);
+const droopy = new Audio(`${path}droopy.mp3`);
 
 $("button").on("click", event => {
   event.preventDefault();
@@ -128,6 +129,12 @@ $("button").on("click", event => {
     case "delusion-pause":
       delusion.pause();
       break;
+    case "droopy":
+      droopy.play();
+      break;
+    case "droopy-pause":
+      droopy.pause();
+      break;
   }
 });
 
@@ -156,5 +163,11 @@ const scrollToLaurel = () => {
 };
 
 const scrollToLotto = () => {
+  $("html, body").animate(
+    {
+      scrollTop: $(".lotto-king").offset().top
+    },
+    500
+  );
   $("#navbarNav").collapse("hide");
 };
