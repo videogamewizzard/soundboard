@@ -9,6 +9,9 @@ const asshole = new Audio("assets/clips/asshole.mp3");
 const vampires = new Audio("assets/clips/vampires.mp3");
 const badoozle = new Audio("assets/clips/badoozle.mp3");
 const girls = new Audio("assets/clips/girls.mp3");
+const job = new Audio("assets/clips/job.mp3");
+const odds = new Audio("assets/clips/odds.mp3");
+const scam = new Audio("assets/clips/scam.mp3");
 
 $("button").on("click", event => {
   event.preventDefault();
@@ -79,11 +82,23 @@ $("button").on("click", event => {
     case "badoozle-pause":
       badoozle.pause();
       break;
-    case "girls":
-      girls.play();
+    case "job":
+      job.play();
       break;
-    case "girls-pause":
-      girls.pause();
+    case "job-pause":
+      job.pause();
+      break;
+    case "odds":
+      odds.play();
+      break;
+    case "odds-pause":
+      odds.pause();
+      break;
+    case "scam":
+      scam.play();
+      break;
+    case "scam-pause":
+      scam.pause();
       break;
   }
 });
