@@ -2,6 +2,8 @@ const ebay = new Audio("ebay.mp3");
 const excuse = new Audio("excuse.mp3");
 const smell = new Audio("smell.mp3");
 const pee = new Audio("pee.mp3");
+const smell2 = new Audio("smell2.mp3");
+const steal = new Audio("steal.mp3");
 
 $("button").on("click", event => {
   event.preventDefault();
@@ -30,6 +32,17 @@ $("button").on("click", event => {
       break;
     case "pee-pause":
       pee.pause();
+    case "smell2":
+      smell2.play();
+      break;
+    case "smell2-pause":
+      smell2.pause();
+      break;
+    case "steal":
+      steal.play();
+      break;
+    case "steal-pause":
+      steal.pause();
       break;
   }
 });
