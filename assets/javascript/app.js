@@ -6,6 +6,9 @@ const smell2 = new Audio("assets/clips/smell2.mp3");
 const steal = new Audio("assets/clips/steal.mp3");
 const shutup = new Audio("assets/clips/shutup.mp3");
 const asshole = new Audio("assets/clips/asshole.mp3");
+const vampires = new Audio("assets/clips/vampires.mp3");
+const badoozle = new Audio("assets/clips/badoozle.mp3");
+const girls = new Audio("assets/clips/girls.mp3");
 
 $("button").on("click", event => {
   event.preventDefault();
@@ -58,5 +61,41 @@ $("button").on("click", event => {
     case "asshole-pause":
       asshole.pause();
       break;
+    case "aaron":
+      scrollToAaron();
+      break;
+    case "momma":
+      scrollToMomma();
+      break;
+    case "vampires":
+      vampires.play();
+      break;
+    case "asshole-pause":
+      vampires.pause();
+      break;
+    case "badoozle":
+      badoozle.play();
+      break;
+    case "badoozle-pause":
+      badoozle.pause();
+      break;
+    case "girls":
+      girls.play();
+      break;
+    case "girls-pause":
+      girls.pause();
+      break;
   }
 });
+
+const scrollToAaron = () => {
+  document.querySelector(".aaron").scrollIntoView({
+    behavior: "smooth"
+  });
+};
+
+const scrollToMomma = () => {
+  document.querySelector(".momma").scrollIntoView({
+    behavior: "smooth"
+  });
+};

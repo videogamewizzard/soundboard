@@ -20,3 +20,9 @@ button {
 .play {
   margin-right: 5px;
 }
+
+.sticky-nav {
+  position: sticky !important;
+  top: 0;
+  z-index: 30;
+}
