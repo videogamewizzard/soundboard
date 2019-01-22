@@ -106,6 +106,12 @@ $("button").on("click", event => {
     case "scam-pause":
       scam.pause();
       break;
+    case "girls":
+      girls.play();
+      break;
+    case "girls-pause":
+      girls.pause();
+      break;
   }
 });
 
