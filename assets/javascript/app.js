@@ -15,6 +15,7 @@ const job = new Audio(`${path}job.mp3`);
 const odds = new Audio(`${path}odds.mp3`);
 const scam = new Audio(`${path}scam.mp3`);
 const wtf = new Audio(`${path}wtf.mp3`);
+const delusion = new Audio(`${path}delusion.mp3`);
 
 $("button").on("click", event => {
   event.preventDefault();
@@ -120,6 +121,12 @@ $("button").on("click", event => {
       break;
     case "wtf-pause":
       wtf.pause();
+      break;
+    case "delusion":
+      delusion.play();
+      break;
+    case "delusion-pause":
+      delusion.pause();
       break;
   }
 });
