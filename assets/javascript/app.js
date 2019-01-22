@@ -19,6 +19,9 @@ const delusion = new Audio(`${path}delusion.mp3`);
 const droopy = new Audio(`${path}droopy.mp3`);
 const fuck = new Audio(`${path}fuck.mp3`);
 const iMean = new Audio(`${path}i-mean.mp3`);
+const beatoff = new Audio(`${path}beatoff.mp3`);
+const hung = new Audio(`${path}hung.mp3`);
+const laurelhorse = new Audio(`${path}laurelhorse.mp3`);
 
 $("button").on("click", event => {
   event.preventDefault();
@@ -149,6 +152,24 @@ $("button").on("click", event => {
     case "i-mean-pause":
       iMean.pause();
       break;
+    case "beatoff":
+      beatoff.play();
+      break;
+    case "beatoff-pause":
+      beatoff.pause();
+      break;
+    case "hung":
+      hung.play();
+      break;
+    case "hung-pause":
+      hung.pause();
+      break;
+    case "laurelhorse":
+      laurelhorse.play();
+      break;
+    case "laurelhorse-pause":
+      laurelhorse.pause();
+      break;
   }
 });
 
@@ -173,6 +194,12 @@ const scrollToMomma = () => {
 };
 
 const scrollToLaurel = () => {
+  $("html, body").animate(
+    {
+      scrollTop: $(".laurel").offset().top
+    },
+    500
+  );
   $("#navbarNav").collapse("hide");
 };
 
@@ -185,3 +212,6 @@ const scrollToLotto = () => {
   );
   $("#navbarNav").collapse("hide");
 };
+
+//AARON hung.mp3
+//LAUREL laurelhorse.mp3
