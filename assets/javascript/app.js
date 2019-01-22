@@ -89,13 +89,19 @@ $("button").on("click", event => {
 });
 
 const scrollToAaron = () => {
-  document.querySelector(".aaron").scrollIntoView({
-    behavior: "smooth"
-  });
+  $("html, body").animate(
+    {
+      scrollTop: $(".aaron").offset().top
+    },
+    500
+  );
 };
 
 const scrollToMomma = () => {
-  document.querySelector(".momma").scrollIntoView({
-    behavior: "smooth"
-  });
+  $("html, body").animate(
+    {
+      scrollTop: $(".momma").offset().top
+    },
+    500
+  );
 };
