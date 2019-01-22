@@ -17,6 +17,8 @@ const scam = new Audio(`${path}scam.mp3`);
 const wtf = new Audio(`${path}wtf.mp3`);
 const delusion = new Audio(`${path}delusion.mp3`);
 const droopy = new Audio(`${path}droopy.mp3`);
+const fuck = new Audio(`${path}fuck.mp3`);
+const iMean = new Audio(`${path}i-mean.mp3`);
 
 $("button").on("click", event => {
   event.preventDefault();
@@ -134,6 +136,18 @@ $("button").on("click", event => {
       break;
     case "droopy-pause":
       droopy.pause();
+      break;
+    case "fuck":
+      fuck.play();
+      break;
+    case "fuck-pause":
+      fuck.pause();
+      break;
+    case "i-mean":
+      iMean.play();
+      break;
+    case "i-mean-pause":
+      iMean.pause();
       break;
   }
 });
