@@ -1,18 +1,20 @@
-const ebay = new Audio("assets/clips/ebay.mp3");
-const excuse = new Audio("assets/clips/excuse.mp3");
-const smell = new Audio("assets/clips/smell.mp3");
-const pee = new Audio("assets/clips/pee.mp3");
-const smell2 = new Audio("assets/clips/smell2.mp3");
-const steal = new Audio("assets/clips/steal.mp3");
-const shutup = new Audio("assets/clips/shutup.mp3");
-const asshole = new Audio("assets/clips/asshole.mp3");
-const vampires = new Audio("assets/clips/vampires.mp3");
-const badoozle = new Audio("assets/clips/badoozle.mp3");
-const girls = new Audio("assets/clips/girls.mp3");
-const job = new Audio("assets/clips/job.mp3");
-const odds = new Audio("assets/clips/odds.mp3");
-const scam = new Audio("assets/clips/scam.mp3");
-const wtf = new Audio("assets/clips/wtf.mp3");
+const path = "assets/clips/";
+
+const ebay = new Audio(`${path}ebay.mp3`);
+const excuse = new Audio(`${path}excuse.mp3`);
+const smell = new Audio(`${path}smell.mp3`);
+const pee = new Audio(`${path}pee.mp3`);
+const smell2 = new Audio(`${path}smell2.mp3`);
+const steal = new Audio(`${path}steal.mp3`);
+const shutup = new Audio(`${path}shutup.mp3`);
+const asshole = new Audio(`${path}asshole.mp3`);
+const vampires = new Audio(`${path}vampires.mp3`);
+const badoozle = new Audio(`${path}badoozle.mp3`);
+const girls = new Audio(`${path}girls.mp3`);
+const job = new Audio(`${path}job.mp3`);
+const odds = new Audio(`${path}odds.mp3`);
+const scam = new Audio(`${path}scam.mp3`);
+const wtf = new Audio(`${path}wtf.mp3`);
 
 $("button").on("click", event => {
   event.preventDefault();
