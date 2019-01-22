@@ -23,6 +23,36 @@ const beatoff = new Audio(`${path}beatoff.mp3`);
 const hung = new Audio(`${path}hung.mp3`);
 const laurelhorse = new Audio(`${path}laurelhorse.mp3`);
 
+const items = [
+  ebay,
+  excuse,
+  smell,
+  pee,
+  smell2,
+  steal,
+  shutup,
+  asshole,
+  vampires,
+  badoozle,
+  girls,
+  job,
+  odds,
+  scam,
+  wtf,
+  delusion,
+  droopy,
+  fuck,
+  iMean,
+  beatoff,
+  hung,
+  laurelhorse
+];
+
+const random = () => {
+  const item = items[Math.floor(Math.random() * items.length)];
+  item.play();
+};
+
 $("button").on("click", event => {
   event.preventDefault();
   const { value } = event.target;
@@ -169,6 +199,9 @@ $("button").on("click", event => {
       break;
     case "laurelhorse-pause":
       laurelhorse.pause();
+      break;
+    case "random":
+      random();
       break;
   }
 });
