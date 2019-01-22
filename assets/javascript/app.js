@@ -12,6 +12,7 @@ const girls = new Audio("assets/clips/girls.mp3");
 const job = new Audio("assets/clips/job.mp3");
 const odds = new Audio("assets/clips/odds.mp3");
 const scam = new Audio("assets/clips/scam.mp3");
+const wtf = new Audio("assets/clips/wtf.mp3");
 
 $("button").on("click", event => {
   event.preventDefault();
@@ -111,6 +112,12 @@ $("button").on("click", event => {
       break;
     case "girls-pause":
       girls.pause();
+      break;
+    case "wtf":
+      wtf.play();
+      break;
+    case "wtf-pause":
+      wtf.pause();
       break;
   }
 });
