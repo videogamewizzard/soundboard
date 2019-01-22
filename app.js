@@ -4,6 +4,7 @@ const smell = new Audio("smell.mp3");
 const pee = new Audio("pee.mp3");
 const smell2 = new Audio("smell2.mp3");
 const steal = new Audio("steal.mp3");
+const shutup = new Audio("shutup.mp3");
 
 $("button").on("click", event => {
   event.preventDefault();
@@ -43,6 +44,12 @@ $("button").on("click", event => {
       break;
     case "steal-pause":
       steal.pause();
+      break;
+    case "shutup":
+      shutup.play();
+      break;
+    case "steal-pause":
+      shutup.pause();
       break;
   }
 });

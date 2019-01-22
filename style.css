@@ -1,6 +1,7 @@
 button {
   margin-bottom: 10px;
-  margin-right: 0px
+  margin-right: 0px;
+  cursor: pointer;
 }
 
 .card {
