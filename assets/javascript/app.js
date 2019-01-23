@@ -60,6 +60,7 @@ const random = () => {
 $(".random").on("click", event => {
   event.preventDefault();
   random();
+  $("#navbarNav").collapse("hide");
 });
 
 $(".play").on("click", event => {

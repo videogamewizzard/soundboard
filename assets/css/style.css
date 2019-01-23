@@ -19,6 +19,8 @@ button {
 
 .card-body {
   display: inline-block;
+  margin-left: 30px;
+  margin-right: 30px;
 }
 
 .card-header {
@@ -32,6 +34,7 @@ button {
 
 .title {
   font-weight: bold;
+  font-size: 24px;
 }
 
 @media screen and (max-width: 532px) {
