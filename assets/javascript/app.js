@@ -22,6 +22,8 @@ const iMean = new Audio(`${path}i-mean.mp3`);
 const beatoff = new Audio(`${path}beatoff.mp3`);
 const hung = new Audio(`${path}hung.mp3`);
 const laurelhorse = new Audio(`${path}laurelhorse.mp3`);
+const retard = new Audio(`${path}retard.mp3`);
+const rotate = new Audio(`${path}rotate.mp3`);
 
 const items = [
   { file: ebay, name: "ebay" },
@@ -45,7 +47,9 @@ const items = [
   { file: iMean, name: "mean" },
   { file: beatoff, name: "beatoff" },
   { file: hung, name: "hung" },
-  { file: laurelhorse, name: "laurelhorse" }
+  { file: laurelhorse, name: "laurelhorse" },
+  { file: retard, name: "retard" },
+  { file: rotate, name: "rotate" }
 ];
 
 const random = () => {
@@ -92,43 +96,3 @@ $(".name").on("click", event => {
   );
   $("#navbarNav").collapse("hide");
 });
-
-const scrollToAaron = () => {
-  $("html, body").animate(
-    {
-      scrollTop: $(".aaron").offset().top
-    },
-    500
-  );
-  $("#navbarNav").collapse("hide");
-};
-
-const scrollToMomma = () => {
-  $("html, body").animate(
-    {
-      scrollTop: $(".momma").offset().top
-    },
-    500
-  );
-  $("#navbarNav").collapse("hide");
-};
-
-const scrollToLaurel = () => {
-  $("html, body").animate(
-    {
-      scrollTop: $(".laurel").offset().top
-    },
-    500
-  );
-  $("#navbarNav").collapse("hide");
-};
-
-const scrollToLotto = () => {
-  $("html, body").animate(
-    {
-      scrollTop: $(".lotto-king").offset().top
-    },
-    500
-  );
-  $("#navbarNav").collapse("hide");
-};
