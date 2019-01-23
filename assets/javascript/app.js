@@ -42,9 +42,9 @@ const items = [
   { file: delusion, name: "delusion" },
   { file: droopy, name: "droopy" },
   { file: fuck, name: "fuck" },
-  { file: iMean, name: "iMean" },
+  { file: iMean, name: "mean" },
   { file: beatoff, name: "beatoff" },
-  { file: hung, name: "beatoff" },
+  { file: hung, name: "hung" },
   { file: laurelhorse, name: "laurelhorse" }
 ];
 
@@ -83,20 +83,14 @@ $(".stop").on("click", event => {
 $(".name").on("click", event => {
   event.preventDefault();
   const { value } = event.target;
-  switch (value) {
-    case "aaron":
-      scrollToAaron();
-      break;
-    case "momma":
-      scrollToMomma();
-      break;
-    case "laurel":
-      scrollToLaurel();
-      break;
-    case "lotto":
-      scrollToLotto();
-      break;
-  }
+  const className = `.${value}`;
+  $("html, body").animate(
+    {
+      scrollTop: $(className).offset().top
+    },
+    500
+  );
+  $("#navbarNav").collapse("hide");
 });
 
 const scrollToAaron = () => {
