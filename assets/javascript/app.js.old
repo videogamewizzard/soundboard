@@ -1,0 +1,141 @@
+// $("button").on("click", event => {
+//   event.preventDefault();
+//   const { value } = event.target;
+//   switch (value) {
+//     case "ebay":
+//       ebay.play();
+//       break;
+//     case "ebay-pause":
+//       ebay.pause();
+//       break;
+//     case "excuse":
+//       excuse.play();
+//       break;
+//     case "excuse-pause":
+//       excuse.pause();
+//       break;
+//     case "smell":
+//       smell.play();
+//       break;
+//     case "smell-pause":
+//       smell.pause();
+//       break;
+//     case "pee":
+//       pee.play();
+//       break;
+//     case "pee-pause":
+//       pee.pause();
+//     case "smell2":
+//       smell2.play();
+//       break;
+//     case "smell2-pause":
+//       smell2.pause();
+//       break;
+//     case "steal":
+//       steal.play();
+//       break;
+//     case "steal-pause":
+//       steal.pause();
+//       break;
+//     case "shutup":
+//       shutup.play();
+//       break;
+//     case "steal-pause":
+//       shutup.pause();
+//       break;
+//     case "asshole":
+//       asshole.play();
+//       break;
+//     case "asshole-pause":
+//       asshole.pause();
+//       break;
+//
+//     case "vampires":
+//       vampires.play();
+//       break;
+//     case "asshole-pause":
+//       vampires.pause();
+//       break;
+//     case "badoozle":
+//       badoozle.play();
+//       break;
+//     case "badoozle-pause":
+//       badoozle.pause();
+//       break;
+//     case "job":
+//       job.play();
+//       break;
+//     case "job-pause":
+//       job.pause();
+//       break;
+//     case "odds":
+//       odds.play();
+//       break;
+//     case "odds-pause":
+//       odds.pause();
+//       break;
+//     case "scam":
+//       scam.play();
+//       break;
+//     case "scam-pause":
+//       scam.pause();
+//       break;
+//     case "girls":
+//       girls.play();
+//       break;
+//     case "girls-pause":
+//       girls.pause();
+//       break;
+//     case "wtf":
+//       wtf.play();
+//       break;
+//     case "wtf-pause":
+//       wtf.pause();
+//       break;
+//     case "delusion":
+//       delusion.play();
+//       break;
+//     case "delusion-pause":
+//       delusion.pause();
+//       break;
+//     case "droopy":
+//       droopy.play();
+//       break;
+//     case "droopy-pause":
+//       droopy.pause();
+//       break;
+//     case "fuck":
+//       fuck.play();
+//       break;
+//     case "fuck-pause":
+//       fuck.pause();
+//       break;
+//     case "i-mean":
+//       iMean.play();
+//       break;
+//     case "i-mean-pause":
+//       iMean.pause();
+//       break;
+//     case "beatoff":
+//       beatoff.play();
+//       break;
+//     case "beatoff-pause":
+//       beatoff.pause();
+//       break;
+//     case "hung":
+//       hung.play();
+//       break;
+//     case "hung-pause":
+//       hung.pause();
+//       break;
+//     case "laurelhorse":
+//       laurelhorse.play();
+//       break;
+//     case "laurelhorse-pause":
+//       laurelhorse.pause();
+//       break;
+//     case "random":
+//       random();
+//       break;
+//   }
+// });

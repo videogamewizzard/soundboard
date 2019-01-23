@@ -24,86 +24,66 @@ const hung = new Audio(`${path}hung.mp3`);
 const laurelhorse = new Audio(`${path}laurelhorse.mp3`);
 
 const items = [
-  ebay,
-  excuse,
-  smell,
-  pee,
-  smell2,
-  steal,
-  shutup,
-  asshole,
-  vampires,
-  badoozle,
-  girls,
-  job,
-  odds,
-  scam,
-  wtf,
-  delusion,
-  droopy,
-  fuck,
-  iMean,
-  beatoff,
-  hung,
-  laurelhorse
+  { file: ebay, name: "ebay" },
+  { file: excuse, name: "excuse" },
+  { file: smell, name: "smell" },
+  { file: pee, name: "pee" },
+  { file: smell2, name: "smell2" },
+  { file: steal, name: "steal" },
+  { file: shutup, name: "shutup" },
+  { file: asshole, name: "asshole" },
+  { file: vampires, name: "vampires" },
+  { file: badoozle, name: "badoozle" },
+  { file: girls, name: "girls" },
+  { file: job, name: "job" },
+  { file: odds, name: "odds" },
+  { file: scam, name: "scam" },
+  { file: wtf, name: "wtf" },
+  { file: delusion, name: "delusion" },
+  { file: droopy, name: "droopy" },
+  { file: fuck, name: "fuck" },
+  { file: iMean, name: "iMean" },
+  { file: beatoff, name: "beatoff" },
+  { file: hung, name: "beatoff" },
+  { file: laurelhorse, name: "laurelhorse" }
 ];
 
 const random = () => {
-  const item = items[Math.floor(Math.random() * items.length)];
+  const item = items[Math.floor(Math.random() * items.length)].file;
   item.play();
 };
 
-$("button").on("click", event => {
+$(".random").on("click", event => {
+  event.preventDefault();
+  random();
+});
+
+$(".play").on("click", event => {
+  event.preventDefault();
+  const { value } = event.target;
+  items.forEach(clip => {
+    if (clip.name === value) {
+      clip.file.play();
+    } else {
+      clip.file.pause();
+    }
+  });
+});
+
+$(".stop").on("click", event => {
+  event.preventDefault();
+  const { value } = event.target;
+  items.forEach(clip => {
+    if (clip.name === value) {
+      clip.file.pause();
+    }
+  });
+});
+
+$(".name").on("click", event => {
   event.preventDefault();
   const { value } = event.target;
   switch (value) {
-    case "ebay":
-      ebay.play();
-      break;
-    case "ebay-pause":
-      ebay.pause();
-      break;
-    case "excuse":
-      excuse.play();
-      break;
-    case "excuse-pause":
-      excuse.pause();
-      break;
-    case "smell":
-      smell.play();
-      break;
-    case "smell-pause":
-      smell.pause();
-      break;
-    case "pee":
-      pee.play();
-      break;
-    case "pee-pause":
-      pee.pause();
-    case "smell2":
-      smell2.play();
-      break;
-    case "smell2-pause":
-      smell2.pause();
-      break;
-    case "steal":
-      steal.play();
-      break;
-    case "steal-pause":
-      steal.pause();
-      break;
-    case "shutup":
-      shutup.play();
-      break;
-    case "steal-pause":
-      shutup.pause();
-      break;
-    case "asshole":
-      asshole.play();
-      break;
-    case "asshole-pause":
-      asshole.pause();
-      break;
     case "aaron":
       scrollToAaron();
       break;
@@ -115,93 +95,6 @@ $("button").on("click", event => {
       break;
     case "lotto":
       scrollToLotto();
-      break;
-    case "vampires":
-      vampires.play();
-      break;
-    case "asshole-pause":
-      vampires.pause();
-      break;
-    case "badoozle":
-      badoozle.play();
-      break;
-    case "badoozle-pause":
-      badoozle.pause();
-      break;
-    case "job":
-      job.play();
-      break;
-    case "job-pause":
-      job.pause();
-      break;
-    case "odds":
-      odds.play();
-      break;
-    case "odds-pause":
-      odds.pause();
-      break;
-    case "scam":
-      scam.play();
-      break;
-    case "scam-pause":
-      scam.pause();
-      break;
-    case "girls":
-      girls.play();
-      break;
-    case "girls-pause":
-      girls.pause();
-      break;
-    case "wtf":
-      wtf.play();
-      break;
-    case "wtf-pause":
-      wtf.pause();
-      break;
-    case "delusion":
-      delusion.play();
-      break;
-    case "delusion-pause":
-      delusion.pause();
-      break;
-    case "droopy":
-      droopy.play();
-      break;
-    case "droopy-pause":
-      droopy.pause();
-      break;
-    case "fuck":
-      fuck.play();
-      break;
-    case "fuck-pause":
-      fuck.pause();
-      break;
-    case "i-mean":
-      iMean.play();
-      break;
-    case "i-mean-pause":
-      iMean.pause();
-      break;
-    case "beatoff":
-      beatoff.play();
-      break;
-    case "beatoff-pause":
-      beatoff.pause();
-      break;
-    case "hung":
-      hung.play();
-      break;
-    case "hung-pause":
-      hung.pause();
-      break;
-    case "laurelhorse":
-      laurelhorse.play();
-      break;
-    case "laurelhorse-pause":
-      laurelhorse.pause();
-      break;
-    case "random":
-      random();
       break;
   }
 });
@@ -245,6 +138,3 @@ const scrollToLotto = () => {
   );
   $("#navbarNav").collapse("hide");
 };
-
-//AARON hung.mp3
-//LAUREL laurelhorse.mp3
