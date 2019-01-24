@@ -31,6 +31,9 @@ const cunt = new Audio(`${path}cunt.mp3`);
 const cats = new Audio(`${path}cats.mp3`);
 const siren = new Audio(`${path}siren.mp3`);
 const swallows = new Audio(`${path}swallows.mp3`);
+const needs = new Audio(`${path}needs.mp3`);
+const bastards = new Audio(`${path}bastards.mp3`);
+const lies = new Audio(`${path}lies.mp3`);
 
 const items = [
   { file: ebay, name: "ebay" },
@@ -63,7 +66,10 @@ const items = [
   { file: cunt, name: "cunt" },
   { file: cats, name: "cats" },
   { file: siren, name: "siren" },
-  { file: swallows, name: "swallows" }
+  { file: swallows, name: "swallows" },
+  { file: needs, name: "needs" },
+  { file: bastards, name: "bastards" },
+  { file: lies, name: "lies" }
 ];
 
 const random = () => {
