@@ -121,3 +121,22 @@ $(".name").on("click", event => {
   );
   $("#navbarNav").collapse("hide");
 });
+
+$(".theme").on("click", event => {
+  event.preventDefault();
+  if ($("body").hasClass("bg-light")) {
+    $("body").removeClass("bg-light");
+    $(".navbar-brand").removeClass("text-dark");
+    $(".navbar").removeClass("bg-light");
+    $("body").addClass("bg-dark");
+    $(".navbar-brand").addClass("text-light");
+    $(".navbar").addClass("bg-dark");
+  } else if ($("body").hasClass("bg-dark")) {
+    $("body").removeClass("bg-dark");
+    $(".navbar-brand").removeClass("text-light");
+    $(".navbar").removeClass("bg-dark");
+    $("body").addClass("bg-light");
+    $(".navbar-brand").addClass("text-dark");
+    $(".navbar").addClass("bg-light");
+  }
+});
