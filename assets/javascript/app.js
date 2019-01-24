@@ -73,6 +73,7 @@ $(".random").on("click", event => {
 
 $(".play").on("click", event => {
   event.preventDefault();
+  $(event.target).addClass("rubberBand");
   const { value } = event.target;
   items.forEach(clip => {
     if (clip.name === value) {
@@ -85,6 +86,7 @@ $(".play").on("click", event => {
 
 $(".stop").on("click", event => {
   event.preventDefault();
+  $(event.target).addClass("rubberBand");
   const { value } = event.target;
   items.forEach(clip => {
     if (clip.name === value) {
