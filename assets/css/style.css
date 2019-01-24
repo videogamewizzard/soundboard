@@ -47,6 +47,10 @@ button {
   font-size: 24px;
 }
 
+.form-card {
+  padding: 10px;
+}
+
 @media screen and (max-width: 532px) {
   .company {
     text-align: center;

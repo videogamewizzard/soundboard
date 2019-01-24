@@ -60,6 +60,11 @@
             Change Theme
           </button>
         </li>
+        <li class="nav-item">
+          <button class="btn badge m-2 link animated lightSpeedIn badge-primary name" value="send">
+            Send Clips
+          </button>
+        </li>
       </ul>
     </div>
   </nav>
@@ -499,8 +504,32 @@
       </div>
       <!--END ROW-->
     </div>
+    <!--START FORM-->
+    <br>
+    <div class="row justify-content-center send">
+      <div class="col-12 col-md-6">
+        <div class="card">
+          <div class="card-header">Send Clips</div>
+          <div class="card-body form-card">
+            <form action="https://formspree.io/poopsandladders23@gmail.com" method="POST">
+              <div class="form-group">
+                <input class="form-control" type="url" name="video-link" placeholder="YouTube URL">
+              </div>
+              <div class="form-group">
+                <input class="form-control" type="text" name="timestamp" placeholder="Video Timestamp">
+              </div>
+              <div class="form-group">
+                <input class="btn btn-outline-success btn-lg" type="submit" value="Send">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
   </div>
   <br>
+
   <footer class="bg-light text-center sticky-footer">Josh A. 2019 <a href="https://github.com/videogamewizzard/soundboard"
       target="_blank" <i class="text-dark fab fa-github icon-large"></i></a> View Source Code</footer>
   </div>
