@@ -29,6 +29,8 @@ const grease = new Audio(`${path}grease.mp3`);
 const negative = new Audio(`${path}negative.mp3`);
 const cunt = new Audio(`${path}cunt.mp3`);
 const cats = new Audio(`${path}cats.mp3`);
+const siren = new Audio(`${path}siren.mp3`);
+const swallows = new Audio(`${path}swallows.mp3`);
 
 const items = [
   { file: ebay, name: "ebay" },
@@ -59,7 +61,9 @@ const items = [
   { file: grease, name: "grease" },
   { file: negative, name: "negative" },
   { file: cunt, name: "cunt" },
-  { file: cats, name: "cats" }
+  { file: cats, name: "cats" },
+  { file: siren, name: "siren" },
+  { file: swallows, name: "swallows" }
 ];
 
 const random = () => {
@@ -78,10 +82,11 @@ $(".play").on("click", event => {
   $(event.target).addClass("rubberBand");
   const { value } = event.target;
   items.forEach(clip => {
-    if (clip.name === value) {
-      clip.file.play();
+    const { name, file } = clip;
+    if (name === value) {
+      file.play();
     } else {
-      clip.file.pause();
+      file.pause();
     }
   });
   window.setTimeout(() => {
@@ -94,8 +99,9 @@ $(".stop").on("click", event => {
   $(event.target).addClass("rubberBand");
   const { value } = event.target;
   items.forEach(clip => {
-    if (clip.name === value) {
-      clip.file.pause();
+    const { name, file } = clip;
+    if (name === value) {
+      file.pause();
     }
   });
   window.setTimeout(() => {
