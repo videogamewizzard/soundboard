@@ -82,6 +82,9 @@ $(".play").on("click", event => {
       clip.file.pause();
     }
   });
+  window.setTimeout(() => {
+    $(event.target).removeClass("rubberBand");
+  }, 2000);
 });
 
 $(".stop").on("click", event => {
@@ -93,6 +96,9 @@ $(".stop").on("click", event => {
       clip.file.pause();
     }
   });
+  window.setTimeout(() => {
+    $(event.target).removeClass("rubberBand");
+  }, 2000);
 });
 
 $(".name").on("click", event => {
