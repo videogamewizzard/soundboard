@@ -141,20 +141,29 @@ $(".theme").on("click", event => {
   if ($("body").hasClass("bg-light")) {
     $("body").removeClass("bg-light");
     $(".navbar-brand").removeClass("text-dark");
-    $(".navbar").removeClass("navbar-light");
-    $(".navbar").removeClass("bg-light");
+    $(".navbar").removeClass(`bg-light navbar-light`);
+    $(".card").removeClass("bg-light");
+    $(".card-header").removeClass("text-dark");
     $("body").addClass("bg-dark");
     $(".navbar-brand").addClass("text-light");
-    $(".navbar").addClass("navbar-dark");
-    $(".navbar").addClass("bg-dark");
+    $(".navbar").addClass(`navbar-dark bg-dark`);
+    $(".card").addClass(`bg-dark border-light`);
+    $(".card-header").addClass("text-light");
   } else if ($("body").hasClass("bg-dark")) {
     $("body").removeClass("bg-dark");
     $(".navbar-brand").removeClass("text-light");
-    $(".navbar").removeClass("bg-dark");
-    $(".navbar").removeClass("navbar-dark");
+    $(".navbar").removeClass(`bg-dark navbar-dark`);
+    $(".card").removeClass(`bg-dark border-light`);
+    $(".card-header").removeClass("text-light");
     $("body").addClass("bg-light");
     $(".navbar-brand").addClass("text-dark");
-    $(".navbar").addClass("bg-light");
-    $(".navbar").addClass("navbar-light");
+    $(".navbar").addClass(`bg-light navbar-light`);
+    $(".card-header").addClass("text-dark");
   }
 });
+
+const shadow = () => {
+  $(".card").addClass("shadow");
+};
+
+shadow();
