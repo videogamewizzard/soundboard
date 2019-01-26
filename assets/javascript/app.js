@@ -40,6 +40,8 @@ const asian = new Audio(`${path}asian.mp3`);
 const ride = new Audio(`${path}ride.mp3`);
 const brokeass = new Audio(`${path}brokeass.mp3`);
 const cuntsharsky = new Audio(`${path}cuntsharsky.mp3`);
+const eatIt = new Audio(`${path}eatit.mp3`);
+const suckIt = new Audio(`${path}suckit.mp3`);
 
 //DECLARE ARRAY
 const items = [];
@@ -94,6 +96,8 @@ const clip37 = new Clip(37, asian, "asian");
 const clip38 = new Clip(38, ride, "ride");
 const clip39 = new Clip(39, brokeass, "brokeass");
 const clip40 = new Clip(40, cuntsharsky, "cuntsharsky");
+const clip41 = new Clip(41, eatIt, "eatit");
+const clip42 = new Clip(42, suckIt, "suckit");
 
 //PUSH INTO ARRAY
 items.push(
@@ -136,7 +140,9 @@ items.push(
   clip37,
   clip38,
   clip39,
-  clip40
+  clip40,
+  clip41,
+  clip42
 );
 
 const random = () => {
