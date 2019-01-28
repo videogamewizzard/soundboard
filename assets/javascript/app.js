@@ -51,59 +51,60 @@ const items = [];
 
 //CLASS TO LAYOUT CLIP OBJECTS
 class Clip {
-  constructor(id, file, name) {
+  constructor(id, file, name, character) {
     this.file = file;
     this.id = id;
     this.name = name;
+    this.character = character;
   }
 }
 
 //DECLARE NEW CLIP CONSTRUCTORS
-const clip1 = new Clip(1, ebay, "ebay");
-const clip2 = new Clip(2, excuse, "excuse");
-const clip3 = new Clip(3, smell, "smell");
-const clip4 = new Clip(4, pee, "pee");
-const clip5 = new Clip(5, smell2, "smell2");
-const clip6 = new Clip(6, steal, "steal");
-const clip7 = new Clip(7, shutup, "shutup");
-const clip8 = new Clip(8, asshole, "asshole");
-const clip9 = new Clip(9, vampires, "vampires");
-const clip10 = new Clip(10, badoozle, "badoozle");
-const clip11 = new Clip(11, girls, "girls");
-const clip12 = new Clip(12, job, "job");
-const clip13 = new Clip(13, odds, "odds");
-const clip14 = new Clip(14, scam, "scam");
-const clip15 = new Clip(15, wtf, "wtf");
-const clip16 = new Clip(16, delusion, "delusion");
-const clip17 = new Clip(17, droopy, "droopy");
-const clip18 = new Clip(18, fuck, "fuck");
-const clip19 = new Clip(19, iMean, "mean");
-const clip20 = new Clip(20, beatoff, "beatoff");
-const clip21 = new Clip(21, hung, "hung");
-const clip22 = new Clip(22, laurelhorse, "laurelhorse");
-const clip23 = new Clip(23, retard, "retard");
-const clip24 = new Clip(24, rotate, "rotate");
-const clip25 = new Clip(25, thief, "thief");
-const clip26 = new Clip(26, grease, "grease");
-const clip27 = new Clip(27, negative, "negative");
-const clip28 = new Clip(28, cunt, "cunt");
-const clip29 = new Clip(29, cats, "cats");
-const clip30 = new Clip(30, siren, "siren");
-const clip31 = new Clip(31, swallows, "swallows");
-const clip32 = new Clip(32, needs, "needs");
-const clip33 = new Clip(33, bastards, "bastards");
-const clip34 = new Clip(34, lies, "lies");
-const clip35 = new Clip(35, ungrateful, "ungrateful");
-const clip36 = new Clip(36, broke, "broke");
-const clip37 = new Clip(37, asian, "asian");
-const clip38 = new Clip(38, ride, "ride");
-const clip39 = new Clip(39, brokeass, "brokeass");
-const clip40 = new Clip(40, cuntsharsky, "cuntsharsky");
-const clip41 = new Clip(41, eatIt, "eatit");
-const clip42 = new Clip(42, suckIt, "suckit");
-const clip43 = new Clip(43, gold, "gold");
-const clip44 = new Clip(44, blowfart, "blowfart");
-const clip45 = new Clip(45, claw, "claw");
+const clip1 = new Clip(1, ebay, "ebay", "Momma K");
+const clip2 = new Clip(2, excuse, "excuse", "Momma K");
+const clip3 = new Clip(3, smell, "smell", "Momma K");
+const clip4 = new Clip(4, pee, "pee", "Momma K");
+const clip5 = new Clip(5, smell2, "smell2", "Momma K");
+const clip6 = new Clip(6, steal, "steal", "Momma K");
+const clip7 = new Clip(7, shutup, "shutup", "Momma K");
+const clip8 = new Clip(8, asshole, "asshole", "Momma K");
+const clip9 = new Clip(9, vampires, "vampires", "Wizzard");
+const clip10 = new Clip(10, badoozle, "badoozle", "Wizzard");
+const clip11 = new Clip(11, girls, "girls", "Wizzard");
+const clip12 = new Clip(12, job, "job", "Wizzard");
+const clip13 = new Clip(13, odds, "odds", "Wizzard");
+const clip14 = new Clip(14, scam, "scam", "Wizzard");
+const clip15 = new Clip(15, wtf, "wtf", "Momma K");
+const clip16 = new Clip(16, delusion, "delusion", "Wizzard");
+const clip17 = new Clip(17, droopy, "droopy", "Lotto King");
+const clip18 = new Clip(18, fuck, "fuck", "Wizzard");
+const clip19 = new Clip(19, iMean, "mean", "Wizzard");
+const clip20 = new Clip(20, beatoff, "beatoff", "Momma K");
+const clip21 = new Clip(21, hung, "hung", "Wizzard");
+const clip22 = new Clip(22, laurelhorse, "laurelhorse", "Laurel");
+const clip23 = new Clip(23, retard, "retard", "Momma K");
+const clip24 = new Clip(24, rotate, "rotate", "Momma K");
+const clip25 = new Clip(25, thief, "thief", "Momma K");
+const clip26 = new Clip(26, grease, "grease", "Wizzard");
+const clip27 = new Clip(27, negative, "negative", "Laurel");
+const clip28 = new Clip(28, cunt, "cunt", "Laurel");
+const clip29 = new Clip(29, cats, "cats", "Momma K");
+const clip30 = new Clip(30, siren, "siren", "Wizzard");
+const clip31 = new Clip(31, swallows, "swallows", "Krazy K");
+const clip32 = new Clip(32, needs, "needs", "Wizzard");
+const clip33 = new Clip(33, bastards, "bastards", "Wizzard");
+const clip34 = new Clip(34, lies, "lies", "Wizzard");
+const clip35 = new Clip(35, ungrateful, "ungrateful", "Momma K");
+const clip36 = new Clip(36, broke, "broke", "Momma K");
+const clip37 = new Clip(37, asian, "asian", "Lotto King");
+const clip38 = new Clip(38, ride, "ride", "Momma K");
+const clip39 = new Clip(39, brokeass, "brokeass", "Justin Payne Goebbels");
+const clip40 = new Clip(40, cuntsharsky, "cuntsharsky", "Electrik Eevee");
+const clip41 = new Clip(41, eatIt, "eatit", "Blowhardish");
+const clip42 = new Clip(42, suckIt, "suckit", "Momma K");
+const clip43 = new Clip(43, gold, "gold", "Wizzard");
+const clip44 = new Clip(44, blowfart, "blowfart", "Blowhardish");
+const clip45 = new Clip(45, claw, "claw", "Laurel");
 
 //PUSH INTO ARRAY
 items.push(
@@ -165,38 +166,6 @@ $(".random").on("click", event => {
   $("#navbarNav").collapse("hide");
 });
 
-$(".play").on("click", event => {
-  event.preventDefault();
-  $(event.target).addClass("rubberBand");
-  const { value } = event.target;
-  items.forEach(clip => {
-    const { name, file } = clip;
-    if (name === value) {
-      file.play();
-    } else {
-      file.pause();
-    }
-  });
-  window.setTimeout(() => {
-    $(event.target).removeClass("rubberBand");
-  }, 2000);
-});
-
-$(".stop").on("click", event => {
-  event.preventDefault();
-  $(event.target).addClass("rubberBand");
-  const { value } = event.target;
-  items.forEach(clip => {
-    const { name, file } = clip;
-    if (name === value) {
-      file.pause();
-    }
-  });
-  window.setTimeout(() => {
-    $(event.target).removeClass("rubberBand");
-  }, 2000);
-});
-
 $(".name").on("click", event => {
   event.preventDefault();
   const { value } = event.target;
@@ -241,3 +210,66 @@ const shadow = () => {
 };
 
 shadow();
+const layout = () => {
+  items.forEach(item => {
+    console.log(item.name);
+    columnDiv = $("<div>").addClass("col-md-3 col-12");
+    cardDiv = $("<div>");
+    cardDiv.addClass("card shadow m-2").appendTo(columnDiv);
+    cardHeader = $("<div>");
+    cardHeader
+      .addClass("card-header")
+      .text(item.character)
+      .appendTo(cardDiv);
+    cardBody = $("<div>");
+    cardBody.addClass("card-body").appendTo(cardDiv);
+    playButton = $("<button>");
+    playButton
+      .addClass("btn btn-primary animated btn-lg btn-block play")
+      .val(item.name)
+      .text(item.name)
+      .appendTo(cardBody);
+    pauseButton = $("<button>");
+    pauseButton
+      .addClass("btn btn-danger animated btn-lg btn-block stop")
+      .val(item.name)
+      .text("Pause")
+      .appendTo(cardBody);
+    $(".start").append(columnDiv);
+  });
+};
+
+layout();
+
+$(".play").on("click", event => {
+  event.preventDefault();
+  console.log(event.target);
+  $(event.target).addClass("rubberBand");
+  const { value } = event.target;
+  items.forEach(clip => {
+    const { name, file } = clip;
+    if (name === value) {
+      file.play();
+    } else {
+      file.pause();
+    }
+  });
+  window.setTimeout(() => {
+    $(event.target).removeClass("rubberBand");
+  }, 2000);
+});
+
+$(".stop").on("click", event => {
+  event.preventDefault();
+  $(event.target).addClass("rubberBand");
+  const { value } = event.target;
+  items.forEach(clip => {
+    const { name, file } = clip;
+    if (name === value) {
+      file.pause();
+    }
+  });
+  window.setTimeout(() => {
+    $(event.target).removeClass("rubberBand");
+  }, 2000);
+});
