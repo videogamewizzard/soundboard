@@ -155,6 +155,14 @@ items.push(
   clip45
 );
 
+const compare = (a, b) => {
+  if (a.character < b.character) return 1;
+  if (a.character > b.character) return -1;
+  return 0;
+};
+
+items.sort(compare);
+
 const random = () => {
   const item = items[Math.floor(Math.random() * items.length)].file;
   item.play();
@@ -205,11 +213,10 @@ $(".theme").on("click", event => {
   }
 });
 
-const shadow = () => {
-  $(".card").addClass("shadow");
+const capitalizeFirst = string => {
+  return string[0].toUpperCase() + string.slice(1);
 };
 
-shadow();
 const layout = () => {
   items.forEach(item => {
     console.log(item.name);
@@ -227,15 +234,29 @@ const layout = () => {
     playButton
       .addClass("btn btn-primary animated btn-lg btn-block play")
       .val(item.name)
-      .text(item.name)
+
+      .html(
+        `<i class="fas fa-play-circle ml-2"></i> ${capitalizeFirst(item.name)}`
+      )
       .appendTo(cardBody);
     pauseButton = $("<button>");
     pauseButton
       .addClass("btn btn-danger animated btn-lg btn-block stop")
       .val(item.name)
-      .text("Pause")
+      .html(`<i class="far fa-pause-circle ml-2"></i> Pause`)
       .appendTo(cardBody);
     $(".start").append(columnDiv);
+    if (item.character === "Wizzard") {
+      $(cardDiv).addClass("aaron");
+    } else if (item.character === "Laurel") {
+      $(cardDiv).addClass("laurel");
+    } else if (item.character === "Momma K") {
+      $(cardDiv).addClass("momma");
+    } else if (item.character === "Lotto King") {
+      $(cardDiv).addClass("lotto");
+    } else if (item.character === "Blowhardish") {
+      $(cardDiv).addClass("other");
+    }
   });
 };
 
