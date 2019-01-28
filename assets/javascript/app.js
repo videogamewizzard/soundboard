@@ -383,7 +383,7 @@ const compare = (a, b) => {
 items.sort(compare);
 
 const random = () => {
-  const item = items[Math.floor(Math.random() * items.length)].file;
+  const item = items[Math.floor(Math.random() * items.length)].audio;
   item.play();
 };
 
