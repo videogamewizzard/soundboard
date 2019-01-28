@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Kosharsky Soundboard</title>
+</head>
+
+<body class="bg-light">
+  <nav class="navbar navbar-expand-lg sticky-top navbar-light shadow mb-2 bg-light">
+    <a class="navbar-brand animated lightSpeedIn title" href="#">Kosharsky Soundboard</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon text-danger"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <button class="btn badge m-2 name animated lightSpeedIn badge-secondary" value="momma">
+            Momma K
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class=" btn badge m-2 name animated lightSpeedIn badge-secondary" value="aaron">
+            Aaron
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="btn badge m-2 name animated lightSpeedIn badge-secondary" value="lotto">
+            Lotto King
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="btn badge m-2 name animated lightSpeedIn badge-secondary" value="laurel">
+            Laurel
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="btn badge m-2 name animated lightSpeedIn badge-secondary" value="other">
+            Other Guests
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="btn badge m-2 link animated lightSpeedIn badge-success random" value="random">
+            Play a Random Clip
+          </button>
+        </li>
+        <li class="nav-item">
+          <a href="https://github.com/videogamewizzard/soundboard/tree/master/assets/clips" target="_blank" class="btn badge m-2 badge-danger link animated lightSpeedIn"
+            role="button" aria-disabled="true">mp3 Files</a>
+        </li>
+        <li class="nav-item">
+          <a href="http://game-wizard.net" target="_blank" class="btn badge m-2 badge-warning link animated lightSpeedIn"
+            role="button" aria-disabled="true">game-wizard.net</a>
+        </li>
+        <li class="nav-item">
+          <button class="btn badge m-2 link animated lightSpeedIn badge-info theme" value="theme">
+            Change Theme
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="btn badge m-2 link animated lightSpeedIn badge-primary name" value="send">
+            Send Clips
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!--START MOMMA K-->
+  <div class="container momma">
+    <div class="row">
+      <div class="col-md-3 col-12">
+        <div class="card m-2">
+          <div class="card-header">Momma K</div>
+          <div class="card-body">
+            <button class="btn btn-primary animated btn-lg btn-block btn-block play ebay" value="ebay"><i class="fas fa-play-circle"></i>
+              eBay
+            </button>
+            <button class="btn btn-danger animated btn-lg btn-block stop ebay" value="ebay">
+              <i class="far fa-pause-circle"></i>
+              Pause
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-12">
+        <div class="card m-2">
+          <div class="card-header">Momma K</div>
+          <div class="card-body">
+            <button class="btn btn-primary animated btn-lg btn-block play excuse" value="excuse"><i class="fas fa-play-circle"></i>
+              Excuse
+            </button>
+            <button class="btn btn-danger animated btn-lg btn-block stop excuse" value="excuse"><i class="far fa-pause-circle"></i>
+              Pause
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-12">
+        <div class="card m-2">
+          <div class="card-header">Momma K</div>
+          <div class="card-body">
+            <button class="btn btn-primary animated btn-lg btn-block play smell" value="smell"><i class="fas fa-play-circle"></i>
+              Smell
+            </button>
+            <button class="btn btn-danger animated btn-lg btn-block stop pee" value="smell"><i class="far fa-pause-circle"></i>
+              Pause
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-12">
+        <div class="card m-2">
+          <div class="card-header">Momma K</div>
+          <div class="card-body">
+            <button class="btn btn-primary animated btn-lg btn-block play pee" value="pee"><i class="fas fa-play-circle"></i>
+              Pee
+            </button>
+            <button class="btn btn-danger animated btn-lg btn-block stop pee" value="pee"><i class="far fa-pause-circle"></i>
+              Pause
+            </button>
+          </div>
+        </div>
+      </div>
+      <!--END ROW-->
+    </div>
+    <div class="row">
+      <div class="col-md-3 col-12">
+        <div class="card m-2">
+          <div class="card-header">Momma K</div>
+          <div class="card-body">
+            <button class="btn btn-primary animated btn-lg btn-block play smell2" value="smell2"><i class="fas fa-play-circle"></i>
+              Smell(2)
+            </button>
+            <button class="btn btn-danger animated btn-lg btn-block stop smell2" value="smell2"><i class="far fa-pause-circle"></i>
+              Pause
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-12">
+        <div class="card m-2">
+          <div class="card-header">Momma K</div>
+          <div class="card-body">
+            <button class="btn btn-primary animated btn-lg btn-block play steal" value="steal"><i class="fas fa-play-circle"></i>
+              Steal
+            </button>
+            <button class="btn btn-danger animated btn-lg btn-block stop steal" value="steal"><i class="far fa-pause-circle"></i>
+              Pause
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-12">
+        <div class="card m-2">
+          <div class="card-header">Momma K</div>
+          <div class="card-body">
+            <button class="btn btn-primary animated btn-lg btn-block play shutup" value="shutup"><i class="fas fa-play-circle"></i>
+              Shut Up
+            </button>
+            <button class="btn btn-danger animated btn-lg btn-block stop shutup" value="shutup"><i class="far fa-pause-circle"></i>
+              Pause
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-12">
+        <div class="card m-2">
+          <div class="card-header">Momma K</div>
+          <div class="card-body">
+            <button class="btn btn-primary animated btn-lg btn-block play asshole" value="asshole"><i class="fas fa-play-circle"></i>
+              Asshole
+            </button>
+            <button class="btn btn-danger animated btn-lg btn-block stop asshole" value="asshole"><i class="far fa-pause-circle"></i>
+              Pause
+            </button>
+          </div>
+        </div>
+      </div>
+      <!--END ROW-->
+    </div>
+    <div class="row">
+      <div class="col-md-3 col-12">
+        <div class="card m-2">
+          <div class="card-header">Momma K</div>
+          <div class="card-body">
+            <button class="btn btn-primary animated btn-lg btn-block play wtf" value="wtf"><i class="fas fa-play-circle"></i>
+              WTF
+            </button>
+            <button class="btn btn-danger animated btn-lg btn-block stop wtf" value="wtf"><i class="far fa-pause-circle"></i>
+              Pause
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-12">
+        <div class="card m-2">
+          <div class="card-header">Momma K</div>
+          <div class="card-body">
+            <button class="btn btn-primary animated btn-lg btn-block play beatoff" value="beatoff"><i class="fas fa-play-circle"></i>
+              Beat Off
+            </button>
+            <button class="btn btn-danger animated btn-lg btn-block stop beatoff" value="beatoff"><i class="far fa-pause-circle"></i>
+              Pause
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-12">
+        <div class="card m-2">
+          <div class="card-header">Momma K</div>
+          <div class="card-body">
+            <button class="btn btn-primary animated btn-lg btn-block play retard" value="retard"><i class="fas fa-play-circle"></i>
+              Retard
+            </button>
+            <button class="btn btn-danger animated btn-lg btn-block stop retard" value="retard"><i class="far fa-pause-circle"></i>
+              Pause
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-12">
+        <div class="card m-2">
+          <div class="card-header">Momma K</div>
+          <div class="card-body">
+            <button class="btn btn-primary animated btn-lg btn-block play rotate" value="rotate"><i class="fas fa-play-circle"></i>
+              Rotate
+            </button>
+            <button class="btn btn-danger animated btn-lg btn-block stop rotate" value="rotate"><i class="far fa-pause-circle"></i>
+              Pause
+            </button>
+          </div>
+        </div>
+      </div>
+      <!--END ROW-->
+    </div>
+    <div class="row">
+      <div class="col-md-3 col-12">
+        <div class="card m-2">
+          <div class="card-header">Momma K</div>
+          <div class="card-body">
+            <button class="btn btn-primary animated btn-lg btn-block play thief" value="thief"><i class="fas fa-play-circle"></i>
+              Thief
+            </button>
+            <button class="btn btn-danger animated btn-lg btn-block stop thief" value="thief"><i class="far fa-pause-circle"></i>
+              Pause
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-12">
+        <div class="card m-2">
+          <div class="card-header">Momma K</div>
+          <div class="card-body">
+            <button class="btn btn-primary animated btn-lg btn-block play cats" value="cats"><i class="fas fa-play-circle"></i>
+              Cats
+            </button>
+            <button class="btn btn-danger animated btn-lg btn-block stop cats" value="cats"><i class="far fa-pause-circle"></i>
+              Pause
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-12">
+        <div class="card m-2">
+          <div class="card-header">Momma K</div>
+          <div class="card-body">
+            <button class="btn btn-primary animated btn-lg btn-block play ungrateful" value="ungrateful"><i class="fas fa-play-circle"></i>
+              Stamps
+            </button>
+            <button class="btn btn-danger animated btn-lg btn-block stop ungrateful" value="ungrateful"><i class="far fa-pause-circle"></i>
+              Pause
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-12">
+        <div class="card m-2">
+          <div class="card-header">Momma K</div>
+          <div class="card-body">
+            <button class="btn btn-primary animated btn-lg btn-block play broke" value="broke"><i class="fas fa-play-circle"></i>
+              Broke
+            </button>
+            <button class="btn btn-danger animated btn-lg btn-block stop broke" value="broke"><i class="far fa-pause-circle"></i>
+              Pause
+            </button>
+          </div>
+        </div>
+      </div>
+      <!--END ROW-->
+    </div>
+    <div class="row">
+      <div class="col-md-3 col-12">
+        <div class="card m-2">
+          <div class="card-header">Momma K</div>
+          <div class="card-body">
+            <button class="btn btn-primary animated btn-lg btn-block play ride" value="ride"><i class="fas fa-play-circle"></i>
+              Ride
+            </button>
+            <button class="btn btn-danger animated btn-lg btn-block stop ride" value="ride"><i class="far fa-pause-circle"></i>
+              Pause
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-12">
+        <div class="card m-2">
+          <div class="card-header">Momma K</div>
+          <div class="card-body">
+            <button class="btn btn-primary animated btn-lg btn-block play suckit" value="suckit"><i class="fas fa-play-circle"></i>
+              Suck It!
+            </button>
+            <button class="btn btn-danger animated btn-lg btn-block stop suckit" value="suckit"><i class="far fa-pause-circle"></i>
+              Pause
+            </button>
+          </div>
+        </div>
+      </div>
+      <!--END ROW-->
+    </div>
+    <!-- START AARON SOUNDS-->
+    <div class="row aaron">
+      <div class="col-md-3 col-12">
+        <div class="card m-2">
+          <div class="card-header"><a href="https://youtube.com/aaronkosharsky" target="_blank">Wizzard</a></div>
+          <div class="card-body">
+            <button class="btn btn-primary animated btn-lg btn-block play vampires" value="vampires"><i class="fas fa-play-circle"></i>
+              Vampires
+            </button>
+            <button class="btn btn-danger animated btn-lg btn-block stop vampires" value="vampires"><i class="far fa-pause-circle"></i>
+              Pause
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-12">
+        <div class="card m-2">
+          <div class="card-header">Wizzard</div>
+          <div class="card-body">
+            <button class="btn btn-primary animated btn-lg btn-block play asshole" value="badoozle"><i class="fas fa-play-circle"></i>
+              Badoozle
+            </button>
+            <button class="btn btn-danger animated btn-lg btn-block stop badoozle" value="badoozle"><i class="far fa-pause-circle"></i>
+              Pause
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-12">
+        <div class="card m-2">
+          <div class="card-header">Wizzard</div>
+          <div class="card-body">
+            <button class="btn btn-primary animated btn-lg btn-block play girls" value="girls"><i class="fas fa-play-circle"></i>
+              Girls
+            </button>
+            <button class="btn btn-danger animated btn-lg btn-block stop girls" value="girls"><i class="far fa-pause-circle"></i>
+              Pause
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-12">
+        <div class="card m-2">
+          <div class="card-header">Wizzard</div>
+          <div class="card-body">
+            <button class="btn btn-primary animated btn-lg btn-block play job" value="job"><i class="fas fa-play-circle"></i>
+              Job
+            </button>
+            <button class="btn btn-danger animated btn-lg btn-block stop job" value="job"><i class="far fa-pause-circle"></i>
+              Pause
+            </button>
+          </div>
+        </div>
+      </div>
+      <!--END ROW-->
+    </div>
+    <div class="row">
+      <div class="col-md-3 col-12">
+        <div class="card m-2">
+          <div class="card-header">Wizzard</div>
+          <div class="card-body">
+            <button class="btn btn-primary animated btn-lg btn-block play odds" value="odds"><i class="fas fa-play-circle"></i>
+              Odds
+            </button>
+            <button class="btn btn-danger animated btn-lg btn-block stop odds" value="odds"><i class="far fa-pause-circle"></i>
+              Pause
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-12">
+        <div class="card m-2">
+          <div class="card-header">Wizzard</div>
+          <div class="card-body">
+            <button class="btn btn-primary animated btn-lg btn-block play scam" value="scam"><i class="fas fa-play-circle"></i>
+              Scam
+            </button>
+            <button class="btn btn-danger animated btn-lg btn-block stop scam" value="scam"><i class="far fa-pause-circle"></i>
+              Pause
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-12">
+        <div class="card m-2">
+          <div class="card-header">Wizzard</div>
+          <div class="card-body">
+            <button class="btn btn-primary animated btn-lg btn-block play delusion" value="delusion"><i class="fas fa-play-circle"></i>
+              Delusion
+            </button>
+            <button class="btn btn-danger animated btn-lg btn-block stop delusion" value="delusion"><i class="far fa-pause-circle"></i>
+              Pause
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-12">
+        <div class="card m-2">
+          <div class="card-header">Wizzard</div>
+          <div class="card-body">
+            <button class="btn btn-primary animated btn-lg btn-block play fuck" value="fuck"><i class="fas fa-play-circle"></i>
+              Fuck
+            </button>
+            <button class="btn btn-danger animated btn-lg btn-block stop fuck" value="fuck"><i class="far fa-pause-circle"></i>
+              Pause
+            </button>
+          </div>
+        </div>
+      </div>
+      <!--END ROW-->
+    </div>
+    <div class="row">
+      <div class="col-md-3 col-12">
+        <div class="card m-2">
+          <div class="card-header">Wizzard</div>
+          <div class="card-body">
+            <button class="btn btn-primary animated btn-lg btn-block play i-mean" value="mean"><i class="fas fa-play-circle"></i>
+              I Mean
+            </button>
+            <button class="btn btn-danger animated btn-lg btn-block stop i-mean" value="mean"><i class="far fa-pause-circle"></i>
+              Pause
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-12">
+        <div class="card m-2">
+          <div class="card-header">Wizzard</div>
+          <div class="card-body">
+            <button class="btn btn-primary animated btn-lg btn-block play hung" value="hung"><i class="fas fa-play-circle"></i>
+              Hung
+            </button>
+            <button class="btn btn-danger animated btn-lg btn-block stop hung" value="hung"><i class="far fa-pause-circle"></i>
+              Pause
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-12">
+        <div class="card m-2">
+          <div class="card-header">Wizzard</div>
+          <div class="card-body">
+            <button class="btn btn-primary animated btn-lg btn-block play grease" value="grease"><i class="fas fa-play-circle"></i>
+              Grease
+            </button>
+            <button class="btn btn-danger animated btn-lg btn-block stop grease" value="grease"><i class="far fa-pause-circle"></i>
+              Pause
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-12">
+        <div class="card m-2">
+          <div class="card-header">Wizzard</div>
+          <div class="card-body">
+            <button class="btn btn-primary animated btn-lg btn-block play siren" value="siren"><i class="fas fa-play-circle"></i>
+              Siren
+            </button>
+            <button class="btn btn-danger animated btn-lg btn-block stop siren" value="siren"><i class="far fa-pause-circle"></i>
+              Pause
+            </button>
+          </div>
+        </div>
+      </div>
+      <!--END ROW-->
+    </div>
+    <div class="row">
+      <div class="col-md-3 col-12">
+        <div class="card m-2">
+          <div class="card-header">Wizzard</div>
+          <div class="card-body">
+            <button class="btn btn-primary animated btn-lg btn-block play needs" value="needs"><i class="fas fa-play-circle"></i>
+              Needs
+            </button>
+            <button class="btn btn-danger animated btn-lg btn-block stop needs" value="needs"><i class="far fa-pause-circle"></i>
+              Pause
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-12">
+        <div class="card m-2">
+          <div class="card-header">Wizzard</div>
+          <div class="card-body">
+            <button class="btn btn-primary animated btn-lg btn-block play bastards" value="bastards"><i class="fas fa-play-circle"></i>
+              Bastards
+            </button>
+            <button class="btn btn-danger animated btn-lg btn-block stop bastards" value="bastards"><i class="far fa-pause-circle"></i>
+              Pause
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-12">
+        <div class="card m-2">
+          <div class="card-header">Wizzard</div>
+          <div class="card-body">
+            <button class="btn btn-primary animated btn-lg btn-block play lies" value="lies"><i class="fas fa-play-circle"></i>
+              Lies
+            </button>
+            <button class="btn btn-danger animated btn-lg btn-block stop lies" value="lies"><i class="far fa-pause-circle"></i>
+              Pause
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-12">
+        <div class="card m-2">
+          <div class="card-header">Wizzard</div>
+          <div class="card-body">
+            <button class="btn btn-primary animated btn-lg btn-block play gold" value="gold"><i class="fas fa-play-circle"></i>
+              Gold
+            </button>
+            <button class="btn btn-danger animated btn-lg btn-block stop gold" value="gold"><i class="far fa-pause-circle"></i>
+              Pause
+            </button>
+          </div>
+        </div>
+      </div>
+      <!--END ROW-->
+    </div>
+    <!--START LOTTO KING-->
+    <div class="row lotto">
+      <div class="col-md-3 col-12">
+        <div class="card m-2">
+          <div class="card-header"><a href="https://youtube.com/lotteryking" target="_blank">Lotto King</a></div>
+          <div class="card-body">
+            <button class="btn btn-primary animated btn-lg btn-block play droopy" value="droopy"><i class="fas fa-play-circle"></i>
+              Droopy
+            </button>
+            <button class="btn btn-danger animated btn-lg btn-block stop droopy" value="droopy"><i class="far fa-pause-circle"></i>
+              Pause
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-12">
+        <div class="card m-2">
+          <div class="card-header">Lotto King</div>
+          <div class="card-body">
+            <button class="btn btn-primary animated btn-lg btn-block play asian" value="asian"><i class="fas fa-play-circle"></i>
+              Asian
+            </button>
+            <button class="btn btn-danger animated btn-lg btn-block stop asian" value="asian"><i class="far fa-pause-circle"></i>
+              Pause
+            </button>
+          </div>
+        </div>
+      </div>
+      <!--END ROW-->
+    </div>
+    <!--START LAUREL-->
+    <div class="row laurel">
+      <div class="col-md-3 col-12">
+        <div class="card m-2">
+          <div class="card-header">Laurel</div>
+          <div class="card-body">
+            <button class="btn btn-primary animated btn-lg btn-block play laurelhorse" value="laurelhorse"><i class="fas fa-play-circle"></i>
+              Horse
+            </button>
+            <button class="btn btn-danger animated btn-lg btn-block stop laurelhorse" value="laurelhorse"><i class="far fa-pause-circle"></i>
+              Pause
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-12">
+        <div class="card m-2">
+          <div class="card-header">Laurel</div>
+          <div class="card-body">
+            <button class="btn btn-primary animated btn-lg btn-block play negative" value="negative"><i class="fas fa-play-circle"></i>
+              Negative
+            </button>
+            <button class="btn btn-danger animated btn-lg btn-block stop negative" value="negative"><i class="far fa-pause-circle"></i>
+              Pause
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-12">
+        <div class="card m-2">
+          <div class="card-header">Laurel</div>
+          <div class="card-body">
+            <button class="btn btn-primary animated btn-lg btn-block play cunt" value="cunt"><i class="fas fa-play-circle"></i>
+              Cunt
+            </button>
+            <button class="btn btn-danger animated btn-lg btn-block stop cunt" value="cunt"><i class="far fa-pause-circle"></i>
+              Pause
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-12">
+        <div class="card m-2">
+          <div class="card-header">Laurel</div>
+          <div class="card-body">
+            <button class="btn btn-primary animated btn-lg btn-block play claw" value="claw"><i class="fas fa-play-circle"></i>
+              Claw
+            </button>
+            <button class="btn btn-danger animated btn-lg btn-block stop claw" value="claw"><i class="far fa-pause-circle"></i>
+              Pause
+            </button>
+          </div>
+        </div>
+      </div>
+      <!--END ROW-->
+    </div>
+    <div class="row other">
+      <div class="col-md-3 col-12">
+        <div class="card m-2">
+          <div class="card-header">Justin Payne Goebbels</div>
+          <div class="card-body">
+            <button class="btn btn-primary animated btn-lg btn-block play brokeass" value="brokeass"><i class="fas fa-play-circle"></i>
+              Broke Ass
+            </button>
+            <button class="btn btn-danger animated btn-lg btn-block stop brokeass" value="brokeass"><i class="far fa-pause-circle"></i>
+              Pause
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-12">
+        <div class="card m-2">
+          <div class="card-header">Krazy K</div>
+          <div class="card-body">
+            <button class="btn btn-primary animated btn-lg btn-block play swallows" value="swallows"><i class="fas fa-play-circle"></i>
+              Swallows
+            </button>
+            <button class="btn btn-danger animated btn-lg btn-block stop swallows" value="swallows"><i class="far fa-pause-circle"></i>
+              Pause
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-12">
+        <div class="card m-2">
+          <div class="card-header"><a href="https://youtube.com/electrikeevee" target="_blank">Electrik Eevee</a></div>
+          <div class="card-body">
+            <button class="btn btn-primary animated btn-lg btn-block play cuntsharsky" value="cuntsharsky"><i class="fas fa-play-circle"></i>
+              Fuck!
+            </button>
+            <button class="btn btn-danger animated btn-lg btn-block stop cuntsharsky" value="cuntsharsky"><i class="far fa-pause-circle"></i>
+              Pause
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-12">
+        <div class="card m-2">
+          <div class="card-header"><a href="https://youtube.com/blowhardish" target="_blank">Blowhardish</a></div>
+          <div class="card-body">
+            <button class="btn btn-primary animated btn-lg btn-block play eatit" value="eatit"><i class="fas fa-play-circle"></i>
+              Eat It!
+            </button>
+            <button class="btn btn-danger animated btn-lg btn-block stop eatit" value="eatit"><i class="far fa-pause-circle"></i>
+              Pause
+            </button>
+          </div>
+        </div>
+      </div>
+      <!--END ROW-->
+    </div>
+    <div class="row">
+      <div class="col-md-3 col-12">
+        <div class="card m-2">
+          <div class="card-header">Blowhardish</div>
+          <div class="card-body">
+            <button class="btn btn-primary animated btn-lg btn-block play blowfart" value="blowfart"><i class="fas fa-play-circle"></i>
+              Fart
+            </button>
+            <button class="btn btn-danger animated btn-lg btn-block stop blowfart" value="blowfart"><i class="far fa-pause-circle"></i>
+              Pause
+            </button>
+          </div>
+        </div>
+      </div>
+      <div id="new"></div>
+      <!--END ROW-->
+    </div>
+    <!--START FORM-->
+    <br>
+    <div class="row justify-content-center send">
+      <div class="col-12 col-md-6">
+        <div class="card">
+          <div class="card-header">
+            Send Clips
+            <p class="spam">It's anonymous. Please don't spam.</p>
+          </div>
+          <div class="card-body form-card">
+            <form action="https://formspree.io/poopsandladders23@gmail.com" method="POST">
+              <div class="form-group">
+                <input class="form-control" type="url" name="video-link" placeholder="YouTube URL">
+              </div>
+              <div class="form-group">
+                <input class="form-control" type="text" name="timestamp" placeholder="Video Timestamp">
+              </div>
+              <div class="form-group">
+                <input class="btn btn-outline-success btn-block" type="submit" value="Send">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+  </div>
+  <br>
+
+  <footer class="bg-light text-center sticky-footer">Josh A. 2019 <a href="https://github.com/videogamewizzard/soundboard"
+      target="_blank" <i class="text-dark fab fa-github icon-large"></i></a> Source Code</footer>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <script src="assets/javascript/app.js"></script>
+</body>
+
+</html>

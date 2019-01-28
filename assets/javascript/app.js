@@ -1,109 +1,329 @@
 const path = "assets/clips/";
-//START AUDIO VARIABLES
-const ebay = new Audio(`${path}ebay.mp3`);
-const excuse = new Audio(`${path}excuse.mp3`);
-const smell = new Audio(`${path}smell.mp3`);
-const pee = new Audio(`${path}pee.mp3`);
-const smell2 = new Audio(`${path}smell2.mp3`);
-const steal = new Audio(`${path}steal.mp3`);
-const shutup = new Audio(`${path}shutup.mp3`);
-const asshole = new Audio(`${path}asshole.mp3`);
-const vampires = new Audio(`${path}vampires.mp3`);
-const badoozle = new Audio(`${path}badoozle.mp3`);
-const girls = new Audio(`${path}girls.mp3`);
-const job = new Audio(`${path}job.mp3`);
-const odds = new Audio(`${path}odds.mp3`);
-const scam = new Audio(`${path}scam.mp3`);
-const wtf = new Audio(`${path}wtf.mp3`);
-const delusion = new Audio(`${path}delusion.mp3`);
-const droopy = new Audio(`${path}droopy.mp3`);
-const fuck = new Audio(`${path}fuck.mp3`);
-const iMean = new Audio(`${path}i-mean.mp3`);
-const beatoff = new Audio(`${path}beatoff.mp3`);
-const hung = new Audio(`${path}hung.mp3`);
-const laurelhorse = new Audio(`${path}laurelhorse.mp3`);
-const retard = new Audio(`${path}retard.mp3`);
-const rotate = new Audio(`${path}rotate.mp3`);
-const thief = new Audio(`${path}thief.mp3`);
-const grease = new Audio(`${path}grease.mp3`);
-const negative = new Audio(`${path}negative.mp3`);
-const cunt = new Audio(`${path}cunt.mp3`);
-const cats = new Audio(`${path}cats.mp3`);
-const siren = new Audio(`${path}siren.mp3`);
-const swallows = new Audio(`${path}swallows.mp3`);
-const needs = new Audio(`${path}needs.mp3`);
-const bastards = new Audio(`${path}bastards.mp3`);
-const lies = new Audio(`${path}lies.mp3`);
-const ungrateful = new Audio(`${path}ungrateful.mp3`);
-const broke = new Audio(`${path}broke.mp3`);
-const asian = new Audio(`${path}asian.mp3`);
-const ride = new Audio(`${path}ride.mp3`);
-const brokeass = new Audio(`${path}brokeass.mp3`);
-const cuntsharsky = new Audio(`${path}cuntsharsky.mp3`);
-const eatIt = new Audio(`${path}eatit.mp3`);
-const suckIt = new Audio(`${path}suckit.mp3`);
-const gold = new Audio(`${path}gold.mp3`);
-const claw = new Audio(`${path}claw.mp3`);
-const blowfart = new Audio(`${path}blowfart.mp3`);
 
 //DECLARE ARRAY
 const items = [];
 
 //CLASS TO LAYOUT CLIP OBJECTS
 class Clip {
-  constructor(id, file, name) {
-    this.file = file;
+  constructor(id, displayName, name, character, audio) {
     this.id = id;
+    this.displayName = displayName;
     this.name = name;
+    this.character = character;
+    this.audio = audio;
   }
 }
 
 //DECLARE NEW CLIP CONSTRUCTORS
-const clip1 = new Clip(1, ebay, "ebay");
-const clip2 = new Clip(2, excuse, "excuse");
-const clip3 = new Clip(3, smell, "smell");
-const clip4 = new Clip(4, pee, "pee");
-const clip5 = new Clip(5, smell2, "smell2");
-const clip6 = new Clip(6, steal, "steal");
-const clip7 = new Clip(7, shutup, "shutup");
-const clip8 = new Clip(8, asshole, "asshole");
-const clip9 = new Clip(9, vampires, "vampires");
-const clip10 = new Clip(10, badoozle, "badoozle");
-const clip11 = new Clip(11, girls, "girls");
-const clip12 = new Clip(12, job, "job");
-const clip13 = new Clip(13, odds, "odds");
-const clip14 = new Clip(14, scam, "scam");
-const clip15 = new Clip(15, wtf, "wtf");
-const clip16 = new Clip(16, delusion, "delusion");
-const clip17 = new Clip(17, droopy, "droopy");
-const clip18 = new Clip(18, fuck, "fuck");
-const clip19 = new Clip(19, iMean, "mean");
-const clip20 = new Clip(20, beatoff, "beatoff");
-const clip21 = new Clip(21, hung, "hung");
-const clip22 = new Clip(22, laurelhorse, "laurelhorse");
-const clip23 = new Clip(23, retard, "retard");
-const clip24 = new Clip(24, rotate, "rotate");
-const clip25 = new Clip(25, thief, "thief");
-const clip26 = new Clip(26, grease, "grease");
-const clip27 = new Clip(27, negative, "negative");
-const clip28 = new Clip(28, cunt, "cunt");
-const clip29 = new Clip(29, cats, "cats");
-const clip30 = new Clip(30, siren, "siren");
-const clip31 = new Clip(31, swallows, "swallows");
-const clip32 = new Clip(32, needs, "needs");
-const clip33 = new Clip(33, bastards, "bastards");
-const clip34 = new Clip(34, lies, "lies");
-const clip35 = new Clip(35, ungrateful, "ungrateful");
-const clip36 = new Clip(36, broke, "broke");
-const clip37 = new Clip(37, asian, "asian");
-const clip38 = new Clip(38, ride, "ride");
-const clip39 = new Clip(39, brokeass, "brokeass");
-const clip40 = new Clip(40, cuntsharsky, "cuntsharsky");
-const clip41 = new Clip(41, eatIt, "eatit");
-const clip42 = new Clip(42, suckIt, "suckit");
-const clip43 = new Clip(43, gold, "gold");
-const clip44 = new Clip(44, blowfart, "blowfart");
-const clip45 = new Clip(45, claw, "claw");
+const clip1 = new Clip(
+  1,
+  "ebay",
+  "ebay",
+  "Momma K",
+  new Audio(`${path}ebay.mp3`)
+);
+const clip2 = new Clip(
+  2,
+  "excuse",
+  "excuse",
+  "Momma K",
+  new Audio(`${path}excuse.mp3`)
+);
+const clip3 = new Clip(
+  3,
+  "smell",
+  "smell",
+  "Momma K",
+  new Audio(`${path}smell.mp3`)
+);
+const clip4 = new Clip(4, "pee", "pee", "Momma K", new Audio(`${path}pee.mp3`));
+const clip5 = new Clip(
+  5,
+  "Smell(2)",
+  "smell2",
+  "Momma K",
+  new Audio(`${path}smell2.mp3`)
+);
+const clip6 = new Clip(
+  6,
+  "steal",
+  "steal",
+  "Momma K",
+  new Audio(`${path}steal.mp3`)
+);
+const clip7 = new Clip(
+  7,
+  "Shut Up",
+  "shutup",
+  "Momma K",
+  new Audio(`${path}shutup.mp3`)
+);
+const clip8 = new Clip(
+  8,
+  "asshole",
+  "asshole",
+  "Momma K",
+  new Audio(`${path}asshole.mp3`)
+);
+const clip9 = new Clip(
+  9,
+  "vampires",
+  "vampires",
+  "Wizzard",
+  new Audio(`${path}vampires.mp3`)
+);
+const clip10 = new Clip(
+  10,
+  "badoozle",
+  "badoozle",
+  "Wizzard",
+  new Audio(`${path}badoozle.mp3`)
+);
+const clip11 = new Clip(
+  11,
+  "girls",
+  "girls",
+  "Wizzard",
+  new Audio(`${path}girls.mp3`)
+);
+const clip12 = new Clip(
+  12,
+  "job",
+  "job",
+  "Wizzard",
+  new Audio(`${path}job.mp3`)
+);
+const clip13 = new Clip(
+  13,
+  "odds",
+  "odds",
+  "Wizzard",
+  new Audio(`${path}odds.mp3`)
+);
+const clip14 = new Clip(
+  14,
+  "scam",
+  "scam",
+  "Wizzard",
+  new Audio(`${path}scam.mp3`)
+);
+const clip15 = new Clip(
+  15,
+  "WTF",
+  "wtf",
+  "Momma K",
+  new Audio(`${path}wtf.mp3`)
+);
+const clip16 = new Clip(
+  16,
+  "delusion",
+  "delusion",
+  "Wizzard",
+  new Audio(`${path}delusion.mp3`)
+);
+const clip17 = new Clip(
+  17,
+  "droopy",
+  "droopy",
+  "Lotto King",
+  new Audio(`${path}droopy.mp3`)
+);
+const clip18 = new Clip(
+  18,
+  "fuck",
+  "fuck",
+  "Wizzard",
+  new Audio(`${path}fuck.mp3`)
+);
+const clip19 = new Clip(
+  19,
+  "I Mean",
+  "mean",
+  "Wizzard",
+  new Audio(`${path}i-mean.mp3`)
+);
+const clip20 = new Clip(
+  20,
+  "Beat Off",
+  "beatoff",
+  "Momma K",
+  new Audio(`${path}beatoff.mp3`)
+);
+const clip21 = new Clip(
+  21,
+  "hung",
+  "hung",
+  "Wizzard",
+  new Audio(`${path}hung.mp3`)
+);
+const clip22 = new Clip(
+  22,
+  "Horse",
+  "laurelhorse",
+  "Laurel",
+  new Audio(`${path}laurelhorse.mp3`)
+);
+const clip23 = new Clip(
+  23,
+  "retard",
+  "retard",
+  "Momma K",
+  new Audio(`${path}retard.mp3`)
+);
+const clip24 = new Clip(
+  24,
+  "rotate",
+  "rotate",
+  "Momma K",
+  new Audio(`${path}rotate.mp3`)
+);
+const clip25 = new Clip(
+  25,
+  "thief",
+  "thief",
+  "Momma K",
+  new Audio(`${path}thief.mp3`)
+);
+const clip26 = new Clip(
+  26,
+  "grease",
+  "grease",
+  "Wizzard",
+  new Audio(`${path}grease.mp3`)
+);
+const clip27 = new Clip(
+  27,
+  "negative",
+  "negative",
+  "Laurel",
+  new Audio(`${path}negative.mp3`)
+);
+const clip28 = new Clip(
+  28,
+  "cunt",
+  "cunt",
+  "Laurel",
+  new Audio(`${path}cunt.mp3`)
+);
+const clip29 = new Clip(
+  29,
+  "cats",
+  "cats",
+  "Momma K",
+  new Audio(`${path}cats.mp3`)
+);
+const clip30 = new Clip(
+  30,
+  "siren",
+  "siren",
+  "Wizzard",
+  new Audio(`${path}siren.mp3`)
+);
+const clip31 = new Clip(
+  31,
+  "swallows",
+  "swallows",
+  "Krazy K",
+  new Audio(`${path}swallows.mp3`)
+);
+const clip32 = new Clip(
+  32,
+  "needs",
+  "needs",
+  "Wizzard",
+  new Audio(`${path}needs.mp3`)
+);
+const clip33 = new Clip(
+  33,
+  "bastards",
+  "bastards",
+  "Wizzard",
+  new Audio(`${path}bastards.mp3`)
+);
+const clip34 = new Clip(
+  34,
+  "lies",
+  "lies",
+  "Wizzard",
+  new Audio(`${path}lies.mp3`)
+);
+const clip35 = new Clip(
+  35,
+  "ungrateful",
+  "ungrateful",
+  "Momma K",
+  new Audio(`${path}ungrateful.mp3`)
+);
+const clip36 = new Clip(
+  36,
+  "broke",
+  "broke",
+  "Momma K",
+  new Audio(`${path}broke.mp3`)
+);
+const clip37 = new Clip(
+  37,
+  "asian",
+  "asian",
+  "Lotto King",
+  new Audio(`${path}asian.mp3`)
+);
+const clip38 = new Clip(
+  38,
+  "ride",
+  "ride",
+  "Momma K",
+  new Audio(`${path}ride.mp3`)
+);
+const clip39 = new Clip(
+  39,
+  "Broke Ass",
+  "brokeass",
+  "Justin Payne Goebbels",
+  new Audio(`${path}brokeass.mp3`)
+);
+const clip40 = new Clip(
+  40,
+  "Fuck!",
+  "cuntsharsky",
+  "Electrik Eevee",
+  new Audio(`${path}cuntsharsky.mp3`)
+);
+const clip41 = new Clip(
+  41,
+  "Eat It",
+  "eatit",
+  "Blowhardish",
+  new Audio(`${path}eatit.mp3`)
+);
+const clip42 = new Clip(
+  42,
+  "Suck It",
+  "suckit",
+  "Momma K",
+  new Audio(`${path}suckit.mp3`)
+);
+const clip43 = new Clip(
+  43,
+  "gold",
+  "gold",
+  "Wizzard",
+  new Audio(`${path}gold.mp3`)
+);
+const clip44 = new Clip(
+  44,
+  "Fart!",
+  "blowfart",
+  "Blowhardish",
+  new Audio(`${path}blowfart.mp3`)
+);
+const clip45 = new Clip(
+  45,
+  "claw",
+  "claw",
+  "Laurel",
+  new Audio(`${path}claw.mp3`)
+);
 
 //PUSH INTO ARRAY
 items.push(
@@ -154,8 +374,16 @@ items.push(
   clip45
 );
 
+const compare = (a, b) => {
+  if (a.character < b.character) return 1;
+  if (a.character > b.character) return -1;
+  return 0;
+};
+
+items.sort(compare);
+
 const random = () => {
-  const item = items[Math.floor(Math.random() * items.length)].file;
+  const item = items[Math.floor(Math.random() * items.length)].audio;
   item.play();
 };
 
@@ -163,38 +391,6 @@ $(".random").on("click", event => {
   event.preventDefault();
   random();
   $("#navbarNav").collapse("hide");
-});
-
-$(".play").on("click", event => {
-  event.preventDefault();
-  $(event.target).addClass("rubberBand");
-  const { value } = event.target;
-  items.forEach(clip => {
-    const { name, file } = clip;
-    if (name === value) {
-      file.play();
-    } else {
-      file.pause();
-    }
-  });
-  window.setTimeout(() => {
-    $(event.target).removeClass("rubberBand");
-  }, 2000);
-});
-
-$(".stop").on("click", event => {
-  event.preventDefault();
-  $(event.target).addClass("rubberBand");
-  const { value } = event.target;
-  items.forEach(clip => {
-    const { name, file } = clip;
-    if (name === value) {
-      file.pause();
-    }
-  });
-  window.setTimeout(() => {
-    $(event.target).removeClass("rubberBand");
-  }, 2000);
 });
 
 $(".name").on("click", event => {
@@ -236,8 +432,117 @@ $(".theme").on("click", event => {
   }
 });
 
-const shadow = () => {
-  $(".card").addClass("shadow");
+const capitalizeFirst = string => {
+  return string[0].toUpperCase() + string.slice(1);
 };
 
-shadow();
+const layout = () => {
+  items.forEach(item => {
+    console.log(item.name);
+    const columnDiv = $("<div>").addClass("col-md-3 col-12");
+    const cardDiv = $("<div>");
+    cardDiv.addClass("card shadow m-2").appendTo(columnDiv);
+    const cardHeader = $("<div>");
+    cardHeader
+      .addClass("card-header")
+      .text(item.character)
+      .appendTo(cardDiv);
+    const cardBody = $("<div>");
+    cardBody.addClass("card-body").appendTo(cardDiv);
+    const playButton = $("<button>");
+    playButton
+      .addClass("btn btn-primary animated btn-lg btn-block play")
+      .val(item.name)
+
+      .html(
+        `<i class="fas fa-play-circle ml-2"></i> ${capitalizeFirst(
+          item.displayName
+        )}`
+      )
+      .appendTo(cardBody);
+    const pauseButton = $("<button>");
+    pauseButton
+      .addClass("btn btn-danger animated btn-lg btn-block stop")
+      .val(item.name)
+      .html(`<i class="far fa-pause-circle ml-2"></i> Pause`)
+      .appendTo(cardBody);
+    $(".start").append(columnDiv);
+    doExtra(item, cardDiv, cardHeader);
+  });
+};
+
+layout();
+
+$(".play").on("click", event => {
+  event.preventDefault();
+  console.log(event.target);
+  $(event.target).addClass("rubberBand");
+  const { value } = event.target;
+  items.forEach(clip => {
+    const { name, audio } = clip;
+    if (name === value) {
+      audio.play();
+    } else {
+      audio.pause();
+    }
+  });
+  window.setTimeout(() => {
+    $(event.target).removeClass("rubberBand");
+  }, 2000);
+});
+
+$(".stop").on("click", event => {
+  event.preventDefault();
+  $(event.target).addClass("rubberBand");
+  const { value } = event.target;
+  items.forEach(clip => {
+    const { name, file } = clip;
+    if (name === value) {
+      audio.pause();
+    }
+  });
+  window.setTimeout(() => {
+    $(event.target).removeClass("rubberBand");
+  }, 2000);
+});
+
+function doExtra(item, cardDiv, cardHeader) {
+  if (item.name === "vampires") {
+    $(cardDiv).addClass("aaron");
+  } else if (item.name === "negative") {
+    $(cardDiv).addClass("laurel");
+  } else if (item.name === "ebay") {
+    $(cardDiv).addClass("momma");
+  } else if (item.name === "droopy") {
+    $(cardDiv).addClass("lotto");
+    const youTubeLink = $("<a>");
+    youTubeLink.text("Lotto King").attr({
+      href: "https://youtube.com/lotteryking",
+      target: "_blank"
+    });
+    $(cardHeader).html(youTubeLink);
+  } else if (item.name === "swallows") {
+    $(cardDiv).addClass("other");
+  } else if (item.name == "eatit") {
+    const youTubeLink = $("<a>");
+    youTubeLink.text("Blowhardish").attr({
+      href: "https://youtube.com/blowhardish",
+      target: "_blank"
+    });
+    $(cardHeader).html(youTubeLink);
+  } else if (item.name == "cuntsharsky") {
+    const youTubeLink = $("<a>");
+    youTubeLink.text("Electrik Eevee").attr({
+      href: "https://youtube.com/electrikeevee",
+      target: "_blank"
+    });
+    $(cardHeader).html(youTubeLink);
+  } else if (item.name == "badoozle") {
+    const youTubeLink = $("<a>");
+    youTubeLink.text("Wizzard").attr({
+      href: "https://youtube.com/aaronkosharsky",
+      target: "_blank"
+    });
+    $(cardHeader).html(youTubeLink);
+  }
+}
