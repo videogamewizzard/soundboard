@@ -325,6 +325,14 @@ const clip45 = new Clip(
   new Audio(`${path}claw.mp3`)
 );
 
+const clip46 = new Clip(
+  46,
+  "Baby Talk",
+  "babytalk",
+  "Wizzard",
+  new Audio(`${path}babytalk.mp3`)
+);
+
 //PUSH INTO ARRAY
 items.push(
   clip1,
@@ -371,7 +379,8 @@ items.push(
   clip42,
   clip43,
   clip44,
-  clip45
+  clip45,
+  clip46
 );
 
 const compare = (a, b) => {
@@ -438,7 +447,6 @@ const capitalizeFirst = string => {
 
 const layout = () => {
   items.forEach(item => {
-    console.log(item.name);
     const columnDiv = $("<div>").addClass("col-md-3 col-12");
     const cardDiv = $("<div>");
     cardDiv.addClass("card shadow m-2").appendTo(columnDiv);
@@ -475,7 +483,6 @@ layout();
 
 $(".play").on("click", event => {
   event.preventDefault();
-  console.log(event.target);
   $(event.target).addClass("rubberBand");
   const { value } = event.target;
   items.forEach(clip => {
