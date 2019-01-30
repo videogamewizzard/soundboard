@@ -333,6 +333,14 @@ const clip46 = new Clip(
   new Audio(`${path}babytalk.mp3`)
 );
 
+const clip47 = new Clip(
+  47,
+  "Bill Collector",
+  "billcollector",
+  "Momma K",
+  new Audio(`${path}billcollector.mp3`)
+);
+
 //PUSH INTO ARRAY
 items.push(
   clip1,
@@ -380,7 +388,8 @@ items.push(
   clip43,
   clip44,
   clip45,
-  clip46
+  clip46,
+  clip47
 );
 
 const compare = (a, b) => {
@@ -447,6 +456,8 @@ const capitalizeFirst = string => {
 
 const layout = () => {
   items.forEach(item => {
+    const row = $("<div>");
+    row.addClass("row");
     const columnDiv = $("<div>").addClass("col-md-3 col-12");
     const cardDiv = $("<div>");
     cardDiv.addClass("card shadow m-2").appendTo(columnDiv);
