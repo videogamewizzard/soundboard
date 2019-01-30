@@ -341,6 +341,14 @@ const clip47 = new Clip(
   new Audio(`${path}billcollector.mp3`)
 );
 
+const clip48 = new Clip(
+  48,
+  "Wizzard Math",
+  "wizzardmath",
+  "Wizzard",
+  new Audio(`${path}wizzardmath.mp3`)
+);
+
 //PUSH INTO ARRAY
 items.push(
   clip1,
@@ -389,7 +397,8 @@ items.push(
   clip44,
   clip45,
   clip46,
-  clip47
+  clip47,
+  clip48
 );
 
 const compare = (a, b) => {
