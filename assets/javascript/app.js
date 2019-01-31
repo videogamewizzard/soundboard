@@ -401,25 +401,30 @@ items.push(
   clip48
 );
 
+//COMPARE FUNCTION FOR SORT
 const compare = (a, b) => {
   if (a.character < b.character) return 1;
   if (a.character > b.character) return -1;
   return 0;
 };
 
+//SORT
 items.sort(compare);
 
+//PLAY RANDOM CLIP FUNCTION
 const random = () => {
   const item = items[Math.floor(Math.random() * items.length)].audio;
   item.play();
 };
 
+//CLICK FUNCTION FOR RANDOM CLIP
 $(".random").on("click", event => {
   event.preventDefault();
   random();
   $("#navbarNav").collapse("hide");
 });
 
+//CLICK FUNCTION TO SCROLL TO SECTIONS
 $(".name").on("click", event => {
   event.preventDefault();
   const { value } = event.target;
@@ -433,6 +438,7 @@ $(".name").on("click", event => {
   $("#navbarNav").collapse("hide");
 });
 
+//CLICK FUNCTION FOR THEME
 $(".theme").on("click", event => {
   event.preventDefault();
   if ($("body").hasClass("bg-light")) {
@@ -459,39 +465,41 @@ $(".theme").on("click", event => {
   }
 });
 
+//FUNCTION TO CAPITALIZE FIRST LETTER IN CLIP OBJECTS DISPLAYNAME BC I'M LAZY BUT NOT WIZZARD LAZY
+
 const capitalizeFirst = string => {
   return string[0].toUpperCase() + string.slice(1);
 };
 
+//PRINT HTML
 const layout = () => {
   items.forEach(item => {
-    const row = $("<div>");
-    row.addClass("row");
+    const { name, displayName, character } = item;
     const columnDiv = $("<div>").addClass("col-md-3 col-12");
     const cardDiv = $("<div>");
     cardDiv.addClass("card shadow m-2").appendTo(columnDiv);
     const cardHeader = $("<div>");
     cardHeader
       .addClass("card-header")
-      .text(item.character)
+      .text(character)
       .appendTo(cardDiv);
     const cardBody = $("<div>");
     cardBody.addClass("card-body").appendTo(cardDiv);
     const playButton = $("<button>");
     playButton
       .addClass("btn btn-primary animated btn-lg btn-block play")
-      .val(item.name)
+      .val(name)
 
       .html(
         `<i class="fas fa-play-circle ml-2"></i> ${capitalizeFirst(
-          item.displayName
+          displayName
         )}`
       )
       .appendTo(cardBody);
     const pauseButton = $("<button>");
     pauseButton
       .addClass("btn btn-danger animated btn-lg btn-block stop")
-      .val(item.name)
+      .val(name)
       .html(`<i class="far fa-pause-circle ml-2"></i> Pause`)
       .appendTo(cardBody);
     $(".start").append(columnDiv);
@@ -501,6 +509,7 @@ const layout = () => {
 
 layout();
 
+//CLICK FUNCTION TO PLAY CLIPS
 $(".play").on("click", event => {
   event.preventDefault();
   $(event.target).addClass("rubberBand");
@@ -518,12 +527,13 @@ $(".play").on("click", event => {
   }, 2000);
 });
 
+//CLICK FUNCTION TO PAUSE CLIPS
 $(".stop").on("click", event => {
   event.preventDefault();
   $(event.target).addClass("rubberBand");
   const { value } = event.target;
   items.forEach(clip => {
-    const { name, file } = clip;
+    const { name, audio } = clip;
     if (name === value) {
       audio.pause();
     }
@@ -533,14 +543,16 @@ $(".stop").on("click", event => {
   }, 2000);
 });
 
+//ADD LINKS TO HEADERS AND APPLY SCROLL CLASSES
 function doExtra(item, cardDiv, cardHeader) {
-  if (item.name === "vampires") {
+  const { name } = item;
+  if (name === "vampires") {
     $(cardDiv).addClass("aaron");
-  } else if (item.name === "negative") {
+  } else if (name === "negative") {
     $(cardDiv).addClass("laurel");
-  } else if (item.name === "ebay") {
+  } else if (name === "ebay") {
     $(cardDiv).addClass("momma");
-  } else if (item.name === "droopy") {
+  } else if (name === "droopy") {
     $(cardDiv).addClass("lotto");
     const youTubeLink = $("<a>");
     youTubeLink.text("Lotto King").attr({
@@ -548,23 +560,23 @@ function doExtra(item, cardDiv, cardHeader) {
       target: "_blank"
     });
     $(cardHeader).html(youTubeLink);
-  } else if (item.name === "swallows") {
+  } else if (name === "swallows") {
     $(cardDiv).addClass("other");
-  } else if (item.name == "eatit") {
+  } else if (name === "eatit") {
     const youTubeLink = $("<a>");
     youTubeLink.text("Blowhardish").attr({
       href: "https://youtube.com/blowhardish",
       target: "_blank"
     });
     $(cardHeader).html(youTubeLink);
-  } else if (item.name == "cuntsharsky") {
+  } else if (name === "cuntsharsky") {
     const youTubeLink = $("<a>");
     youTubeLink.text("Electrik Eevee").attr({
       href: "https://youtube.com/electrikeevee",
       target: "_blank"
     });
     $(cardHeader).html(youTubeLink);
-  } else if (item.name == "badoozle") {
+  } else if (name === "badoozle") {
     const youTubeLink = $("<a>");
     youTubeLink.text("Wizzard").attr({
       href: "https://youtube.com/aaronkosharsky",
