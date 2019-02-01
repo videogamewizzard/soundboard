@@ -349,6 +349,14 @@ const clip48 = new Clip(
   new Audio(`${path}wizzardmath.mp3`)
 );
 
+const clip49 = new Clip(
+  48,
+  "Fuck Off!",
+  "fuckoff",
+  "DJ Pam",
+  new Audio(`${path}fuckoff.mp3`)
+);
+
 //PUSH INTO ARRAY
 items.push(
   clip1,
@@ -398,7 +406,8 @@ items.push(
   clip45,
   clip46,
   clip47,
-  clip48
+  clip48,
+  clip49
 );
 
 //COMPARE FUNCTION FOR SORT
