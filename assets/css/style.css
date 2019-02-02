@@ -11,16 +11,16 @@ button {
 }
 
 .name {
-  font-size: 13px !important;
+  font-size: 14px !important;
 }
 
 .link {
   font-size: 14px !important;
 }
 
-
 .card {
   text-align: center;
+  font-family: 'Roboto', sans-serif;
 }
 
 .card-body {
@@ -31,7 +31,8 @@ button {
 
 .card-header {
   font-size: 18px;
-  font-weight: bold;
+  font-weight: bolder;
+  letter-spacing: 0.5px;
 }
 
 .play {
@@ -56,4 +57,16 @@ button {
   font-size: 12px;
   font-style: italic;
   margin-bottom: -2px;
+}
+
+@media screen and (max-width: 532px) {
+  .company {
+    text-align: center;
+    font-weight: bold;
+    font-size: 28px;
+  }
+
+  .navbar {
+    margin-bottom: 20px !important;
+  }
 }
