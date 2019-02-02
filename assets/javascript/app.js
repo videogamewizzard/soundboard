@@ -365,6 +365,22 @@ const clip50 = new Clip(
   new Audio(`${path}lookatme.mp3`)
 );
 
+const clip51 = new Clip(
+  51,
+  "Mom",
+  "mom",
+  "Blowhardish",
+  new Audio(`${path}mom.mp3`)
+);
+
+const clip52 = new Clip(
+  52,
+  "$6 Combo",
+  "combo",
+  "DJ Pam",
+  new Audio(`${path}combo.mp3`)
+);
+
 //PUSH INTO ARRAY
 items.push(
   clip1,
@@ -416,7 +432,9 @@ items.push(
   clip47,
   clip48,
   clip49,
-  clip50
+  clip50,
+  clip51,
+  clip52
 );
 
 //COMPARE FUNCTION FOR SORT
