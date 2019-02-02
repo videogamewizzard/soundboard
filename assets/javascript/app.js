@@ -350,11 +350,19 @@ const clip48 = new Clip(
 );
 
 const clip49 = new Clip(
-  48,
+  49,
   "Fuck Off!",
   "fuckoff",
   "DJ Pam",
   new Audio(`${path}fuckoff.mp3`)
+);
+
+const clip50 = new Clip(
+  50,
+  "Look At Me",
+  "lookatme",
+  "Aussie Outlaw",
+  new Audio(`${path}lookatme.mp3`)
 );
 
 //PUSH INTO ARRAY
@@ -407,7 +415,8 @@ items.push(
   clip46,
   clip47,
   clip48,
-  clip49
+  clip49,
+  clip50
 );
 
 //COMPARE FUNCTION FOR SORT
@@ -589,6 +598,13 @@ function doExtra(item, cardDiv, cardHeader) {
     const youTubeLink = $("<a>");
     youTubeLink.text("Wizzard").attr({
       href: "https://youtube.com/aaronkosharsky",
+      target: "_blank"
+    });
+    $(cardHeader).html(youTubeLink);
+  } else if (name === "lookatme") {
+    const youTubeLink = $("<a>");
+    youTubeLink.text("Aussie Outlaw").attr({
+      href: "https://youtube.com/user/OutlawMCC",
       target: "_blank"
     });
     $(cardHeader).html(youTubeLink);
