@@ -492,21 +492,25 @@ $(".theme").on("click", event => {
     $(".navbar").removeClass(`bg-light navbar-light`);
     $(".card").removeClass("bg-light");
     $(".card-header").removeClass("text-dark");
+    $(".hidden").removeClass("text-light");
     $("body").addClass("bg-dark");
     $(".navbar-brand").addClass("text-light");
     $(".navbar").addClass(`navbar-dark bg-dark`);
     $(".card").addClass(`bg-dark border-light`);
     $(".card-header").addClass("text-light");
+    $(".hidden").addClass("text-dark");
   } else if ($("body").hasClass("bg-dark")) {
     $("body").removeClass("bg-dark");
     $(".navbar-brand").removeClass("text-light");
     $(".navbar").removeClass(`bg-dark navbar-dark`);
     $(".card").removeClass(`bg-dark border-light`);
     $(".card-header").removeClass("text-light");
+    $(".hidden").removeClass("text-dark");
     $("body").addClass("bg-light");
     $(".navbar-brand").addClass("text-dark");
     $(".navbar").addClass(`bg-light navbar-light`);
     $(".card-header").addClass("text-dark");
+    $(".hidden").addClass("text-light");
   }
 });
 
