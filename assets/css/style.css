@@ -43,7 +43,8 @@ button {
   font-size: 24px;
 }
 
-#typewriter {
+#typewriter,
+.modal-title {
   font-weight: bolder;
   font-size: 24px;
 }
