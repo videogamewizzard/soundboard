@@ -661,7 +661,7 @@ function doExtra(item, cardDiv, cardHeader) {
 }
 
 const kkeys = [],
-  konami = "38,38,40,40,37,39,37,39,66,65";
+  konami = "83,67,65,77";
 
 $(document).keydown(function(e) {
   kkeys.push(e.keyCode);
