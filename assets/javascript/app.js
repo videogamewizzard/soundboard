@@ -659,3 +659,33 @@ function doExtra(item, cardDiv, cardHeader) {
     $(cardHeader).html(youTubeLink);
   }
 }
+
+const kkeys = [],
+  konami = "38,38,40,40,37,39,37,39,66,65";
+
+$(document).keydown(function(e) {
+  kkeys.push(e.keyCode);
+
+  if (kkeys.toString().indexOf(konami) >= 0) {
+    $(document).unbind("keydown", arguments.callee);
+    $("#myModal").modal();
+    typeWriter();
+    scam.play();
+  }
+});
+
+const scam = new Audio(`${path}hahaha.mp3`);
+
+var i = 0;
+var txt = `SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM
+  SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM
+  SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM SCAM`;
+var speed = 50;
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("typewriter").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
