@@ -405,6 +405,21 @@ const clip55 = new Clip(
   new Audio(`${path}getyou.mp3`)
 );
 
+const clip56 = new Clip(
+  56,
+  "Titty Bar",
+  "tittybar",
+  "Laurel",
+  new Audio(`${path}tittybar.mp3`)
+);
+
+const clip57 = new Clip(
+  57,
+  "Pound Town",
+  "poundtown",
+  "It's Dannymfugga",
+  new Audio(`${path}poundtown.mp3`)
+);
 //PUSH INTO ARRAY
 items.push(
   clip1,
@@ -461,7 +476,9 @@ items.push(
   clip52,
   clip53,
   clip54,
-  clip55
+  clip55,
+  clip56,
+  clip57
 );
 
 //COMPARE FUNCTION FOR SORT
@@ -660,20 +677,7 @@ function doExtra(item, cardDiv, cardHeader) {
   }
 }
 
-const kkeys = [],
-  konami = "83,67,65,77";
-
-$(document).keydown(function(e) {
-  kkeys.push(e.keyCode);
-
-  if (kkeys.toString().indexOf(konami) >= 0) {
-    $(document).unbind("keydown", arguments.callee);
-    $("#myModal").modal();
-    typeWriter();
-    scam.play();
-  }
-});
-
+//START SCAM
 const scam = new Audio(`${path}hahaha.mp3`);
 
 let i = 0;
@@ -683,8 +687,23 @@ let speed = 62;
 
 function typeWriter() {
   if (i < txt.length) {
-    document.getElementById("typewriter").innerHTML += txt.charAt(i);
+    let getIdModal = document.getElementById("typewriter");
+    getIdModal.innerHTML += txt.charAt(i);
     i++;
     setTimeout(typeWriter, speed);
   }
 }
+
+const keyArray = [],
+  keyCode = "83,67,65,77";
+
+$(document).keydown(function(e) {
+  keyArray.push(e.keyCode);
+
+  if (keyArray.toString().indexOf(keyCode) >= 0) {
+    $(document).unbind("keydown", arguments.callee);
+    $("#myModal").modal();
+    typeWriter();
+    scam.play();
+  }
+});
