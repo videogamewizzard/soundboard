@@ -460,6 +460,14 @@ const clip62 = new Clip(
   "Momma K",
   new Audio(`${path}letmetalk.mp3`)
 );
+
+const clip63 = new Clip(
+  63,
+  "Meth Head",
+  "methhead",
+  "Momma K",
+  new Audio(`${path}methhead.mp3`)
+);
 //PUSH INTO ARRAY
 items.push(
   clip1,
