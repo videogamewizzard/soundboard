@@ -531,7 +531,8 @@ items.push(
   clip59,
   clip60,
   clip61,
-  clip62
+  clip62,
+  clip63
 );
 
 //COMPARE FUNCTION FOR SORT
