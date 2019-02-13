@@ -468,6 +468,22 @@ const clip63 = new Clip(
   "Momma K",
   new Audio(`${path}methhead.mp3`)
 );
+
+const clip64 = new Clip(
+  64,
+  "Darth Wizzard",
+  "vader",
+  "Wizzard",
+  new Audio(`${path}vader.mp3`)
+);
+
+const clip65 = new Clip(
+  65,
+  "Sniffles",
+  "sniffles",
+  "Wizzard",
+  new Audio(`${path}sniffles.mp3`)
+);
 //PUSH INTO ARRAY
 items.push(
   clip1,
@@ -532,7 +548,9 @@ items.push(
   clip60,
   clip61,
   clip62,
-  clip63
+  clip63,
+  clip64,
+  clip65
 );
 
 //COMPARE FUNCTION FOR SORT
