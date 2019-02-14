@@ -484,6 +484,46 @@ const clip65 = new Clip(
   "Wizzard",
   new Audio(`${path}sniffles.mp3`)
 );
+
+const clip66 = new Clip(
+  66,
+  "Hate Me",
+  "hateme",
+  "Wizzard",
+  new Audio(`${path}hateme.mp3`)
+);
+
+const clip67 = new Clip(
+  67,
+  "126.2 IQ",
+  "iq",
+  "Wizzard",
+  new Audio(`${path}iq.mp3`)
+);
+
+const clip68 = new Clip(
+  68,
+  "Gold Digger",
+  "golddigger",
+  "Wizzard",
+  new Audio(`${path}golddigger.mp3`)
+);
+
+const clip69 = new Clip(
+  69,
+  "Rich Guys",
+  "richguys",
+  "Wizzard",
+  new Audio(`${path}richguys.mp3`)
+);
+
+const clip70 = new Clip(
+  70,
+  "Debt",
+  "debt",
+  "Lotto King",
+  new Audio(`${path}debt.mp3`)
+);
 //PUSH INTO ARRAY
 items.push(
   clip1,
@@ -550,7 +590,12 @@ items.push(
   clip62,
   clip63,
   clip64,
-  clip65
+  clip65,
+  clip66,
+  clip67,
+  clip68,
+  clip69,
+  clip70
 );
 
 //COMPARE FUNCTION FOR SORT
@@ -630,15 +675,17 @@ const capitalizeFirst = string => {
 //PRINT HTML
 const layout = () => {
   items.forEach(item => {
-    const { name, displayName, character } = item;
+    const { id, name, displayName, character } = item;
     const columnDiv = $("<div>").addClass("col-md-3 col-12");
     const cardDiv = $("<div>");
     cardDiv.addClass("card shadow m-2").appendTo(columnDiv);
     const cardHeader = $("<div>");
-    cardHeader
-      .addClass("card-header")
-      .text(character)
-      .appendTo(cardDiv);
+    id > 58
+      ? cardHeader.html(
+          `${character} <div id="new" class="ml-1 badge badge-warning">NEW</div>`
+        )
+      : cardHeader.text(character);
+    cardHeader.addClass("card-header").appendTo(cardDiv);
     const cardBody = $("<div>");
     cardBody.addClass("card-body").appendTo(cardDiv);
     const playButton = $("<button>");
