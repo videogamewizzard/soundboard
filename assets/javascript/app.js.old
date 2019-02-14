@@ -301,3 +301,6 @@ const shadow = () => {
 };
 
 shadow();
+
+          <a href="https://github.com/videogamewizzard/soundboard/tree/master/assets/logs" target="_blank" class="btn badge m-1 badge-primary link animated lightSpeedIn"
+            role="button" aria-disabled="true">LiveStream Chat Logs</a>

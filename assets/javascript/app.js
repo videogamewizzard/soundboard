@@ -682,7 +682,7 @@ const layout = () => {
     const cardHeader = $("<div>");
     id > 58
       ? cardHeader.html(
-          `${character} <div id="new" class="ml-1 badge badge-warning">NEW</div>`
+          `${character} <div id="new" class="ml-1 badge badge-pill badge-warning">NEW</div>`
         )
       : cardHeader.text(character);
     cardHeader.addClass("card-header").appendTo(cardDiv);
