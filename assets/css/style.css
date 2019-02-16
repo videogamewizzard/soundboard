@@ -14,13 +14,18 @@ button {
   font-size: 14px !important;
 }
 
-.link,
-.extra {
+.extra,
+.link {
+  font-size: 14px !important;
+}
+
+
+.drop {
   font-size: 14px !important;
 }
 
 .dropdown-menu {
-  padding: 5px;
+  padding: 12px;
   margin-left: 5px;
   margin-right: 5px;
 }
