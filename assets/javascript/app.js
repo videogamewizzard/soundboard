@@ -717,7 +717,7 @@ layout();
 //CLICK FUNCTION TO PLAY CLIPS
 $(document).on("click", ".play", event => {
   event.preventDefault();
-  $(event.target).addClass("rubberBand");
+  $(event.target).addClass("pulse fast");
   const { value } = event.target;
   items.forEach(clip => {
     const { name, audio } = clip;
@@ -728,14 +728,14 @@ $(document).on("click", ".play", event => {
     }
   });
   window.setTimeout(() => {
-    $(event.target).removeClass("rubberBand");
+    $(event.target).removeClass("pulse fast");
   }, 2000);
 });
 
 //CLICK FUNCTION TO PAUSE CLIPS
 $(document).on("click", ".stop", event => {
   event.preventDefault();
-  $(event.target).addClass("rubberBand");
+  $(event.target).addClass("pulse fast");
   const { value } = event.target;
   items.forEach(clip => {
     const { name, audio } = clip;
@@ -744,38 +744,39 @@ $(document).on("click", ".stop", event => {
     }
   });
   window.setTimeout(() => {
-    $(event.target).removeClass("rubberBand");
+    $(event.target).removeClass("pulse fast");
   }, 2000);
 });
 
 function checkTheme() {
   if ($("body").hasClass("bg-light")) {
-    $("body").removeClass("bg-light");
-    $(".navbar-brand").removeClass("text-dark");
+    $("body, .card").removeClass("bg-light");
+    $(".navbar-brand, .card-header").removeClass("text-dark");
     $(".navbar").removeClass(`bg-light navbar-light`);
-    $(".card").removeClass("bg-light");
-    $(".card-header").removeClass("text-dark");
-    //$(".hidden").removeClass("text-light");
+    $(".name").removeClass("badge-secondary");
+    $(".theme").removeClass("badge-dark");
+    //
     $("body").addClass("bg-dark");
-    $(".navbar-brand").addClass("text-light");
+    $(".navbar-brand, .card-header").addClass("text-light");
     $(".navbar").addClass(`navbar-dark bg-dark`);
     $(".card").addClass(`bg-dark border-light`);
-    $(".card-header").addClass("text-light");
     $(".theme").text("Light Theme");
-    //$(".hidden").addClass("text-dark");
+    $(".theme, .name").addClass("badge-light");
+    //
   } else if ($("body").hasClass("bg-dark")) {
     $("body").removeClass("bg-dark");
-    $(".navbar-brand").removeClass("text-light");
+    $(".navbar-brand, .card-header").removeClass("text-light");
     $(".navbar").removeClass(`bg-dark navbar-dark`);
     $(".card").removeClass(`bg-dark border-light`);
-    $(".card-header").removeClass("text-light");
-    //$(".hidden").removeClass("text-dark");
+    $(".theme, .name").removeClass("badge-light");
+    //
     $("body").addClass("bg-light");
-    $(".navbar-brand").addClass("text-dark");
+    $(".navbar-brand, .card-header").addClass("text-dark");
     $(".navbar").addClass(`bg-light navbar-light`);
-    $(".card-header").addClass("text-dark");
-    $(".theme").text("Dark Theme");
-    //$(".hidden").addClass("text-light");
+    $(".theme")
+      .text("Dark Theme")
+      .addClass("badge-dark");
+    $(".name").addClass("badge-secondary");
   }
 }
 
