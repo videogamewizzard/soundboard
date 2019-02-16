@@ -626,11 +626,19 @@ $(".sort").on("click", event => {
     $(".start").empty();
     layout();
     $(".sort").text("Sort By Name");
+    if ($("body").hasClass("bg-dark")) {
+      $(".card").addClass(`bg-dark border-light`);
+      $(".card-header").addClass("text-light");
+    }
   } else if (items[0].id >= 70) {
     items.sort(compare);
     $(".start").empty();
     layout();
     $(".sort").text("Sort By New");
+    if ($("body").hasClass("bg-dark")) {
+      $(".card").addClass(`bg-dark border-light`);
+      $(".card-header").addClass("text-light");
+    }
   }
 });
 //CLICK FUNCTION FOR RANDOM CLIP
@@ -657,34 +665,7 @@ $(".name").on("click", event => {
 //CLICK FUNCTION FOR THEME
 $(".theme").on("click", event => {
   event.preventDefault();
-  if ($("body").hasClass("bg-light")) {
-    $("body").removeClass("bg-light");
-    $(".navbar-brand").removeClass("text-dark");
-    $(".navbar").removeClass(`bg-light navbar-light`);
-    $(".card").removeClass("bg-light");
-    $(".card-header").removeClass("text-dark");
-    //$(".hidden").removeClass("text-light");
-    $("body").addClass("bg-dark");
-    $(".navbar-brand").addClass("text-light");
-    $(".navbar").addClass(`navbar-dark bg-dark`);
-    $(".card").addClass(`bg-dark border-light`);
-    $(".card-header").addClass("text-light");
-    $(".theme").text("Light Theme");
-    //$(".hidden").addClass("text-dark");
-  } else if ($("body").hasClass("bg-dark")) {
-    $("body").removeClass("bg-dark");
-    $(".navbar-brand").removeClass("text-light");
-    $(".navbar").removeClass(`bg-dark navbar-dark`);
-    $(".card").removeClass(`bg-dark border-light`);
-    $(".card-header").removeClass("text-light");
-    //$(".hidden").removeClass("text-dark");
-    $("body").addClass("bg-light");
-    $(".navbar-brand").addClass("text-dark");
-    $(".navbar").addClass(`bg-light navbar-light`);
-    $(".card-header").addClass("text-dark");
-    $(".theme").text("Dark Theme");
-    //$(".hidden").addClass("text-light");
-  }
+  checkTheme();
 });
 
 //FUNCTION TO CAPITALIZE FIRST LETTER IN CLIP OBJECTS DISPLAYNAME BC I'M LAZY BUT NOT WIZZARD LAZY
@@ -766,6 +747,37 @@ $(document).on("click", ".stop", event => {
     $(event.target).removeClass("rubberBand");
   }, 2000);
 });
+
+function checkTheme() {
+  if ($("body").hasClass("bg-light")) {
+    $("body").removeClass("bg-light");
+    $(".navbar-brand").removeClass("text-dark");
+    $(".navbar").removeClass(`bg-light navbar-light`);
+    $(".card").removeClass("bg-light");
+    $(".card-header").removeClass("text-dark");
+    //$(".hidden").removeClass("text-light");
+    $("body").addClass("bg-dark");
+    $(".navbar-brand").addClass("text-light");
+    $(".navbar").addClass(`navbar-dark bg-dark`);
+    $(".card").addClass(`bg-dark border-light`);
+    $(".card-header").addClass("text-light");
+    $(".theme").text("Light Theme");
+    //$(".hidden").addClass("text-dark");
+  } else if ($("body").hasClass("bg-dark")) {
+    $("body").removeClass("bg-dark");
+    $(".navbar-brand").removeClass("text-light");
+    $(".navbar").removeClass(`bg-dark navbar-dark`);
+    $(".card").removeClass(`bg-dark border-light`);
+    $(".card-header").removeClass("text-light");
+    //$(".hidden").removeClass("text-dark");
+    $("body").addClass("bg-light");
+    $(".navbar-brand").addClass("text-dark");
+    $(".navbar").addClass(`bg-light navbar-light`);
+    $(".card-header").addClass("text-dark");
+    $(".theme").text("Dark Theme");
+    //$(".hidden").addClass("text-light");
+  }
+}
 
 //ADD LINKS TO HEADERS AND APPLY SCROLL CLASSES
 function doExtra(item, cardDiv, cardHeader) {
