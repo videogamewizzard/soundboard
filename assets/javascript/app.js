@@ -619,7 +619,7 @@ const random = () => {
   item.play();
 };
 
-$(".sort").on("click", event => {
+$(document).on("click", ".sort", event => {
   event.preventDefault();
   if (items[0].id < 70) {
     items.sort(sortById);
@@ -642,14 +642,14 @@ $(".sort").on("click", event => {
   }
 });
 //CLICK FUNCTION FOR RANDOM CLIP
-$(".random").on("click", event => {
+$(document).on("click", ".random", event => {
   event.preventDefault();
   random();
   $("#navbarNav").collapse("hide");
 });
 
 //CLICK FUNCTION TO SCROLL TO SECTIONS
-$(".name").on("click", event => {
+$(document).on("click", ".name", event => {
   event.preventDefault();
   const { value } = event.target;
   const className = `.${value}`;
@@ -663,7 +663,7 @@ $(".name").on("click", event => {
 });
 
 //CLICK FUNCTION FOR THEME
-$(".theme").on("click", event => {
+$(document).on("click", ".theme", event => {
   event.preventDefault();
   checkTheme();
 });
