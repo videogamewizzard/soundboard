@@ -605,6 +605,11 @@ const compare = (a, b) => {
   return 0;
 };
 
+const sortById = (a, b) => {
+  if (a.id < b.id) return 1;
+  if (a.id > b.id) return -1;
+  return 0;
+};
 //SORT
 items.sort(compare);
 
@@ -614,6 +619,12 @@ const random = () => {
   item.play();
 };
 
+$(".sort").on("click", event => {
+  event.preventDefault();
+  items.sort(sortById);
+  $(".start").empty();
+  layout();
+});
 //CLICK FUNCTION FOR RANDOM CLIP
 $(".random").on("click", event => {
   event.preventDefault();
@@ -650,6 +661,7 @@ $(".theme").on("click", event => {
     $(".navbar").addClass(`navbar-dark bg-dark`);
     $(".card").addClass(`bg-dark border-light`);
     $(".card-header").addClass("text-light");
+    $(".theme").text("Light Theme");
     //$(".hidden").addClass("text-dark");
   } else if ($("body").hasClass("bg-dark")) {
     $("body").removeClass("bg-dark");
@@ -662,6 +674,7 @@ $(".theme").on("click", event => {
     $(".navbar-brand").addClass("text-dark");
     $(".navbar").addClass(`bg-light navbar-light`);
     $(".card-header").addClass("text-dark");
+    $(".theme").text("Dark Theme");
     //$(".hidden").addClass("text-light");
   }
 });

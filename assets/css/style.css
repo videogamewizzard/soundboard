@@ -14,8 +14,15 @@ button {
   font-size: 14px !important;
 }
 
-.link {
+.link,
+.extra {
   font-size: 14px !important;
+}
+
+.dropdown-menu {
+  padding: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .card {
