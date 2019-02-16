@@ -734,7 +734,7 @@ const layout = () => {
 layout();
 
 //CLICK FUNCTION TO PLAY CLIPS
-$(".play").on("click", event => {
+$(document).on("click", ".play", event => {
   event.preventDefault();
   $(event.target).addClass("rubberBand");
   const { value } = event.target;
@@ -752,7 +752,7 @@ $(".play").on("click", event => {
 });
 
 //CLICK FUNCTION TO PAUSE CLIPS
-$(".stop").on("click", event => {
+$(document).on("click", ".stop", event => {
   event.preventDefault();
   $(event.target).addClass("rubberBand");
   const { value } = event.target;
