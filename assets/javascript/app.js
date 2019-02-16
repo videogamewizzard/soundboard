@@ -621,9 +621,17 @@ const random = () => {
 
 $(".sort").on("click", event => {
   event.preventDefault();
-  items.sort(sortById);
-  $(".start").empty();
-  layout();
+  if (items[0].id < 70) {
+    items.sort(sortById);
+    $(".start").empty();
+    layout();
+    $(".sort").text("Sort By Name");
+  } else if (items[0].id >= 70) {
+    items.sort(compare);
+    $(".start").empty();
+    layout();
+    $(".sort").text("Sort By New");
+  }
 });
 //CLICK FUNCTION FOR RANDOM CLIP
 $(".random").on("click", event => {
