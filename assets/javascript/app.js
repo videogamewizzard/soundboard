@@ -678,7 +678,7 @@ const capitalizeFirst = string => {
 const layout = () => {
   items.forEach(item => {
     const { id, name, displayName, character } = item;
-    const columnDiv = $("<div>").addClass("col-md-3 col-12");
+    const columnDiv = $("<div>").addClass("col-lg-3 col-md-4 col-12");
     const cardDiv = $("<div>");
     cardDiv.addClass("card shadow m-2").appendTo(columnDiv);
     const cardHeader = $("<div>");
@@ -750,13 +750,13 @@ $(document).on("click", ".stop", event => {
 
 function checkTheme() {
   if ($("body").hasClass("bg-light")) {
-    $("body, .card").removeClass("bg-light");
+    $("body, .card, .dropdown-menu").removeClass("bg-light");
     $(".navbar-brand, .card-header").removeClass("text-dark");
     $(".navbar").removeClass(`bg-light navbar-light`);
     $(".name").removeClass("badge-secondary");
     $(".theme").removeClass("badge-dark");
     //
-    $("body").addClass("bg-dark");
+    $("body, .dropdown-menu").addClass("bg-dark");
     $(".navbar-brand, .card-header").addClass("text-light");
     $(".navbar").addClass(`navbar-dark bg-dark`);
     $(".card").addClass(`bg-dark border-light`);
@@ -764,13 +764,13 @@ function checkTheme() {
     $(".theme, .name").addClass("badge-light");
     //
   } else if ($("body").hasClass("bg-dark")) {
-    $("body").removeClass("bg-dark");
+    $("body, .dropdown-menu").removeClass("bg-dark");
     $(".navbar-brand, .card-header").removeClass("text-light");
     $(".navbar").removeClass(`bg-dark navbar-dark`);
     $(".card").removeClass(`bg-dark border-light`);
     $(".theme, .name").removeClass("badge-light");
     //
-    $("body").addClass("bg-light");
+    $("body, .dropdown-menu").addClass("bg-light");
     $(".navbar-brand, .card-header").addClass("text-dark");
     $(".navbar").addClass(`bg-light navbar-light`);
     $(".theme")
