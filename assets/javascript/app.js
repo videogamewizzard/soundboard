@@ -658,7 +658,7 @@ $(document).on("click", ".name", event => {
   );
   $(".start").empty();
   if (id == "Other") {
-    guestArray.sort(sortById);
+    guestArray.sort(compare);
     layout(guestArray);
   } else {
     filteredArray.sort(sortById);
