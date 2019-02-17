@@ -610,6 +610,7 @@ const sortById = (a, b) => {
   if (a.id > b.id) return -1;
   return 0;
 };
+
 //SORT
 items.sort(compare);
 
@@ -619,26 +620,19 @@ const random = () => {
   item.play();
 };
 
+//CLICK FUNCTION TO SORT DOM
 $(document).on("click", ".sort", event => {
   event.preventDefault();
   if (items[0].id < 70) {
     items.sort(sortById);
     $(".start").empty();
-    layout();
-    $(".sort").text("Sort By Name");
-    if ($("body").hasClass("bg-dark")) {
-      $(".card").addClass(`bg-dark border-light`);
-      $(".card-header").addClass("text-light");
-    }
+    layout(items);
+    $(".sort").text("Show All by Name");
   } else if (items[0].id >= 70) {
     items.sort(compare);
     $(".start").empty();
-    layout();
-    $(".sort").text("Sort By New");
-    if ($("body").hasClass("bg-dark")) {
-      $(".card").addClass(`bg-dark border-light`);
-      $(".card-header").addClass("text-light");
-    }
+    layout(items);
+    $(".sort").text("Show All By New");
   }
 });
 //CLICK FUNCTION FOR RANDOM CLIP
@@ -648,8 +642,30 @@ $(document).on("click", ".random", event => {
   $("#navbarNav").collapse("hide");
 });
 
-//CLICK FUNCTION TO SCROLL TO SECTIONS
+//CLICK FUNCTION TO REBUILD DOM
 $(document).on("click", ".name", event => {
+  event.preventDefault();
+  const { id } = event.target;
+  const itemsClone = [...items];
+  const filteredArray = itemsClone.filter(item => id == item.character);
+  const guestArray = itemsClone.filter(
+    item =>
+      id == "Other" &&
+      item.character != "Momma K" &&
+      item.character != "Wizzard" &&
+      item.character != "Lotto King" &&
+      item.character != "Laurel"
+  );
+  $(".start").empty();
+  if (id == "Other") {
+    layout(guestArray);
+  } else {
+    layout(filteredArray);
+  }
+});
+
+//CLICK FUNCTION TO SCROLL TO SUBMIT CLIP
+$(document).on("click", ".send-clip", event => {
   event.preventDefault();
   const { value } = event.target;
   const className = `.${value}`;
@@ -675,8 +691,8 @@ const capitalizeFirst = string => {
 };
 
 //PRINT HTML
-const layout = () => {
-  items.forEach(item => {
+const layout = array => {
+  array.forEach(item => {
     const { id, name, displayName, character } = item;
     const columnDiv = $("<div>").addClass("col-lg-3 col-md-4 col-12");
     const cardDiv = $("<div>");
@@ -708,11 +724,19 @@ const layout = () => {
       .html(`<i class="far fa-pause-circle ml-2"></i> Pause`)
       .appendTo(cardBody);
     $(".start").append(columnDiv);
+    if ($("body").hasClass("bg-dark")) {
+      $(".card").addClass(`bg-dark border-light`);
+      $(".card-header").addClass("text-light");
+    }
+    if ($("body").hasClass("bg-dark")) {
+      $(".card").addClass(`bg-dark border-light`);
+      $(".card-header").addClass("text-light");
+    }
     doExtra(item, cardDiv, cardHeader);
   });
 };
 
-layout();
+layout(items);
 
 //CLICK FUNCTION TO PLAY CLIPS
 $(document).on("click", ".play", event => {
@@ -748,7 +772,8 @@ $(document).on("click", ".stop", event => {
   }, 2000);
 });
 
-function checkTheme() {
+//THEME FUNCTION
+const checkTheme = () => {
   if ($("body").hasClass("bg-light")) {
     $("body, .card, .dropdown-menu").removeClass("bg-light");
     $(".navbar-brand, .card-header").removeClass("text-dark");
@@ -778,7 +803,7 @@ function checkTheme() {
       .addClass("badge-dark");
     $(".name").addClass("badge-secondary");
   }
-}
+};
 
 //ADD LINKS TO HEADERS AND APPLY SCROLL CLASSES
 function doExtra(item, cardDiv, cardHeader) {
