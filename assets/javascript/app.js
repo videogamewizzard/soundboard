@@ -611,80 +611,29 @@ const sortById = (a, b) => {
   return 0;
 };
 
+const sortBy = (field, reverse, primer) => {
+  const key = primer
+    ? function(x) {
+        return primer(x[field]);
+      }
+    : function(x) {
+        return x[field];
+      };
+
+  reverse = !reverse ? 1 : -1;
+
+  return function(a, b) {
+    return (a = key(a)), (b = key(b)), reverse * ((a > b) - (b > a));
+  };
+};
 //SORT
-items.sort(compare);
+items.sort(sortBy("character", true));
 
 //PLAY RANDOM CLIP FUNCTION
 const random = () => {
   const item = items[Math.floor(Math.random() * items.length)].audio;
   item.play();
 };
-
-//CLICK FUNCTION TO SORT DOM
-$(document).on("click", ".sort", event => {
-  event.preventDefault();
-  if (items[0].id < 70) {
-    items.sort(sortById);
-    $(".start").empty();
-    layout(items);
-    $(".sort").text("Show All by Name");
-  } else if (items[0].id >= 70) {
-    items.sort(compare);
-    $(".start").empty();
-    layout(items);
-    $(".sort").text("Show All By New");
-  }
-});
-//CLICK FUNCTION FOR RANDOM CLIP
-$(document).on("click", ".random", event => {
-  event.preventDefault();
-  random();
-  $("#navbarNav").collapse("hide");
-});
-
-//CLICK FUNCTION TO REBUILD DOM
-$(document).on("click", ".name", event => {
-  event.preventDefault();
-  const { id } = event.target;
-  const itemsClone = [...items];
-  const filteredArray = itemsClone.filter(item => id == item.character);
-  const guestArray = itemsClone.filter(
-    item =>
-      id == "Other" &&
-      item.character != "Momma K" &&
-      item.character != "Wizzard" &&
-      item.character != "Lotto King" &&
-      item.character != "Laurel"
-  );
-  $(".start").empty();
-  if (id == "Other") {
-    guestArray.sort(compare);
-    layout(guestArray);
-  } else {
-    filteredArray.sort(sortById);
-    layout(filteredArray);
-  }
-});
-
-//CLICK FUNCTION TO SCROLL TO SUBMIT CLIP
-$(document).on("click", ".send-clip", event => {
-  event.preventDefault();
-  const { value } = event.target;
-  const className = `.${value}`;
-  $("html, body").animate(
-    {
-      scrollTop: $(className).offset().top
-    },
-    500
-  );
-  $("#navbarNav").collapse("hide");
-});
-
-//CLICK FUNCTION FOR THEME
-$(document).on("click", ".theme", event => {
-  event.preventDefault();
-  checkTheme();
-});
 
 //FUNCTION TO CAPITALIZE FIRST LETTER IN CLIP OBJECTS DISPLAYNAME BC I'M LAZY BUT NOT WIZZARD LAZY
 
@@ -712,7 +661,7 @@ const layout = array => {
     playButton
       .addClass("btn btn-primary animated btn-lg btn-block play")
       .val(name)
-
+      .attr({ data: "play" })
       .html(
         `<i class="fas fa-play-circle ml-2"></i> ${capitalizeFirst(
           displayName
@@ -723,6 +672,7 @@ const layout = array => {
     pauseButton
       .addClass("btn btn-danger animated btn-lg btn-block stop")
       .val(name)
+      .attr({ data: "stop" })
       .html(`<i class="far fa-pause-circle ml-2"></i> Pause`)
       .appendTo(cardBody);
     $(".start").append(columnDiv);
@@ -743,35 +693,43 @@ layout(items);
 //CLICK FUNCTION TO PLAY CLIPS
 $(document).on("click", ".play", event => {
   event.preventDefault();
-  $(event.target).addClass("pulse fast");
-  const { value } = event.target;
-  items.forEach(clip => {
-    const { name, audio } = clip;
-    if (name === value) {
-      audio.play();
-    } else {
-      audio.pause();
-    }
-  });
-  window.setTimeout(() => {
-    $(event.target).removeClass("pulse fast");
-  }, 2000);
+  playClip(event);
 });
 
 //CLICK FUNCTION TO PAUSE CLIPS
 $(document).on("click", ".stop", event => {
   event.preventDefault();
-  $(event.target).addClass("pulse fast");
-  const { value } = event.target;
-  items.forEach(clip => {
-    const { name, audio } = clip;
-    if (name === value) {
-      audio.pause();
-    }
-  });
-  window.setTimeout(() => {
-    $(event.target).removeClass("pulse fast");
-  }, 2000);
+  stopClip(event);
+});
+
+//CLICK FUNCTION TO SORT DOM
+$(document).on("click", ".sort", event => {
+  event.preventDefault();
+  sortAllClips();
+});
+//CLICK FUNCTION FOR RANDOM CLIP
+$(document).on("click", ".random", event => {
+  event.preventDefault();
+  random();
+  $("#navbarNav").collapse("hide");
+});
+
+//CLICK FUNCTION TO REBUILD DOM
+$(document).on("click", ".name", event => {
+  event.preventDefault();
+  filterByCharacter(event);
+});
+
+//CLICK FUNCTION TO SCROLL TO SUBMIT CLIP
+$(document).on("click", ".send-clip", event => {
+  event.preventDefault();
+  scrollToSend(event);
+});
+
+//CLICK FUNCTION FOR THEME
+$(document).on("click", ".theme", event => {
+  event.preventDefault();
+  checkTheme();
 });
 
 //THEME FUNCTION
@@ -807,25 +765,94 @@ const checkTheme = () => {
   }
 };
 
+const filterByCharacter = event => {
+  const { id } = event.target;
+  const itemsClone = [...items];
+  const filteredArray = itemsClone.filter(item => id == item.character);
+  const guestArray = itemsClone.filter(
+    item =>
+      id == "Other" &&
+      item.character != "Momma K" &&
+      item.character != "Wizzard" &&
+      item.character != "Lotto King" &&
+      item.character != "Laurel"
+  );
+  $(".start").empty();
+  if (id == "Other") {
+    guestArray.sort(compare);
+    layout(guestArray);
+  } else {
+    filteredArray.sort(sortById);
+    layout(filteredArray);
+  }
+};
+
+const sortAllClips = () => {
+  if (items[0].id < 70) {
+    items.sort(sortById);
+    $(".start").empty();
+    layout(items);
+    $(".sort").text("Show All by Name");
+  } else if (items[0].id >= 70) {
+    items.sort(compare);
+    $(".start").empty();
+    layout(items);
+    $(".sort").text("Show All By New");
+  }
+};
+
+const stopClip = event => {
+  $(event.target).addClass("pulse fast");
+  const { value } = event.target;
+  items.forEach(clip => {
+    const { name, audio } = clip;
+    if (name === value) {
+      audio.pause();
+    }
+  });
+  window.setTimeout(() => {
+    $(event.target).removeClass("pulse fast");
+  }, 2000);
+};
+
+const playClip = event => {
+  $(event.target).addClass("pulse fast");
+  const { value } = event.target;
+  items.forEach(clip => {
+    const { name, audio } = clip;
+    if (name === value) {
+      audio.play();
+    } else {
+      audio.pause();
+    }
+  });
+  window.setTimeout(() => {
+    $(event.target).removeClass("pulse fast");
+  }, 2000);
+};
+
+const scrollToSend = event => {
+  const { value } = event.target;
+  const className = `.${value}`;
+  $("html, body").animate(
+    {
+      scrollTop: $(className).offset().top
+    },
+    500
+  );
+  $("#navbarNav").collapse("hide");
+};
+
 //ADD LINKS TO HEADERS AND APPLY SCROLL CLASSES
 function doExtra(item, cardDiv, cardHeader) {
   const { name } = item;
-  if (name === "vampires") {
-    $(cardDiv).addClass("aaron");
-  } else if (name === "negative") {
-    $(cardDiv).addClass("laurel");
-  } else if (name === "ebay") {
-    $(cardDiv).addClass("momma");
-  } else if (name === "droopy") {
-    $(cardDiv).addClass("lotto");
+  if (name === "droopy") {
     const youTubeLink = $("<a>");
     youTubeLink.text("Lotto King").attr({
       href: "https://youtube.com/lotteryking",
       target: "_blank"
     });
     $(cardHeader).html(youTubeLink);
-  } else if (name === "swallows") {
-    $(cardDiv).addClass("other");
   } else if (name === "eatit") {
     const youTubeLink = $("<a>");
     youTubeLink.text("Blowhardish").attr({
@@ -867,8 +894,8 @@ let speed = 62;
 
 function typeWriter() {
   if (i < txt.length) {
-    let getIdModal = document.getElementById("typewriter");
-    getIdModal.innerHTML += txt.charAt(i);
+    let getModalId = document.getElementById("typewriter");
+    getModalId.innerHTML += txt.charAt(i);
     i++;
     setTimeout(typeWriter, speed);
   }
