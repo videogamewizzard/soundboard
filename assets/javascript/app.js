@@ -658,8 +658,10 @@ $(document).on("click", ".name", event => {
   );
   $(".start").empty();
   if (id == "Other") {
+    guestArray.sort(sortById);
     layout(guestArray);
   } else {
+    filteredArray.sort(sortById);
     layout(filteredArray);
   }
 });
