@@ -91,6 +91,11 @@ body {
   flex: 1;
 }
 
+.dropdown-toggle {
+  letter-spacing: 0.3px;
+  font-size: 14px !important;
+}
+
 @media screen and (max-width: 532px) {
   .company {
     text-align: center;

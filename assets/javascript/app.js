@@ -740,6 +740,8 @@ const checkTheme = () => {
     $(".navbar").removeClass(`bg-light navbar-light`);
     $(".name").removeClass("badge-secondary");
     $(".theme").removeClass("badge-dark");
+    $(".extra").removeClass(`badge-light text-dark`);
+
     //
     $("body, .dropdown-menu").addClass("bg-dark");
     $(".navbar-brand, .card-header").addClass("text-light");
@@ -747,6 +749,8 @@ const checkTheme = () => {
     $(".card").addClass(`bg-dark border-light`);
     $(".theme").text("Light Theme");
     $(".theme, .name").addClass("badge-light");
+    $(".extra").addClass(`badge-dark text-light`);
+
     //
   } else if ($("body").hasClass("bg-dark")) {
     $("body, .dropdown-menu").removeClass("bg-dark");
@@ -754,6 +758,8 @@ const checkTheme = () => {
     $(".navbar").removeClass(`bg-dark navbar-dark`);
     $(".card").removeClass(`bg-dark border-light`);
     $(".theme, .name").removeClass("badge-light");
+    $(".extra").removeClass(`badge-dark text-light`);
+
     //
     $("body, .dropdown-menu").addClass("bg-light");
     $(".navbar-brand, .card-header").addClass("text-dark");
@@ -762,6 +768,7 @@ const checkTheme = () => {
       .text("Dark Theme")
       .addClass("badge-dark");
     $(".name").addClass("badge-secondary");
+    $(".extra").addClass(`badge-light text-dark`);
   }
 };
 
