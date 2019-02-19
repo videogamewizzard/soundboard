@@ -524,6 +524,14 @@ const clip70 = new Clip(
   "Lotto King",
   new Audio(`${path}debt.mp3`)
 );
+
+const clip71 = new Clip(
+  71,
+  "Confession",
+  "confession",
+  "Momma K",
+  new Audio(`${path}confession.mp3`)
+);
 //PUSH INTO ARRAY
 items.push(
   clip1,
@@ -595,7 +603,8 @@ items.push(
   clip67,
   clip68,
   clip69,
-  clip70
+  clip70,
+  clip71
 );
 
 //COMPARE FUNCTION FOR SORT
@@ -747,7 +756,7 @@ const checkTheme = () => {
     $(".navbar-brand, .card-header").addClass("text-light");
     $(".navbar").addClass(`navbar-dark bg-dark`);
     $(".card").addClass(`bg-dark border-light`);
-    $(".theme").text("Light Theme");
+    $(".theme").text("Light");
     $(".theme, .name").addClass("badge-light");
     $(".extra").addClass(`badge-dark text-light`);
 
@@ -765,7 +774,7 @@ const checkTheme = () => {
     $(".navbar-brand, .card-header").addClass("text-dark");
     $(".navbar").addClass(`bg-light navbar-light`);
     $(".theme")
-      .text("Dark Theme")
+      .text("Dark")
       .addClass("badge-dark");
     $(".name").addClass("badge-secondary");
     $(".extra").addClass(`badge-light text-dark`);
