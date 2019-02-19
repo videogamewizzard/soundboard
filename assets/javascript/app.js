@@ -527,19 +527,20 @@ const clip70 = new Clip(
 
 const clip71 = new Clip(
   71,
+  "Laugh?",
+  "laugh",
+  "Wizzard",
+  new Audio(`${path}laugh.mp3`)
+);
+
+const clip72 = new Clip(
+  72,
   "Confession",
   "confession",
   "Momma K",
   new Audio(`${path}confession.mp3`)
 );
 
-const clip72 = new Clip(
-  72,
-  "Laugh?",
-  "laugh",
-  "Wizzard",
-  new Audio(`${path}laugh.mp3`)
-);
 //PUSH INTO ARRAY
 items.push(
   clip1,
@@ -813,7 +814,7 @@ const filterByCharacter = event => {
 };
 
 const sortAllClips = () => {
-  if (items[0].id < 70) {
+  if (items[0].id < 72) {
     items.sort(sortById);
     $(".start").empty();
     layout(items);
