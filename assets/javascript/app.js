@@ -565,6 +565,38 @@ const clip75 = new Clip(
   new Audio(`${path}fuckaaron.mp3`)
 );
 
+const clip76 = new Clip(
+  76,
+  "I Don't Pay",
+  "idontpay",
+  "Wizzard",
+  new Audio(`${path}idontpay.mp3`)
+);
+
+const clip77 = new Clip(
+  77,
+  "Gamestop",
+  "gamestop",
+  "Wizzard",
+  new Audio(`${path}gamestop.mp3`)
+);
+
+const clip78 = new Clip(
+  78,
+  "No Censorship",
+  "nocensorship",
+  "Electrik Eevee",
+  new Audio(`${path}nocensorship.mp3`)
+);
+
+const clip79 = new Clip(
+  79,
+  "Happy Birthday",
+  "happybday",
+  "Carrie",
+  new Audio(`${path}happybday.mp3`)
+);
+
 //wizzard cannot be newest clip until conditional bug is fixed
 //PUSH INTO ARRAY
 items.push(
@@ -642,7 +674,11 @@ items.push(
   clip72,
   clip73,
   clip74,
-  clip75
+  clip75,
+  clip76,
+  clip77,
+  clip78,
+  clip79
 );
 
 //COMPARE FUNCTION FOR SORT
@@ -692,7 +728,7 @@ const capitalizeFirst = string => {
 const layout = array => {
   array.forEach(item => {
     const { id, name, displayName, character } = item;
-    const columnDiv = $("<div>").addClass("col-lg-3 col-md-4 col-12");
+    const columnDiv = $("<div>").addClass("col-lg-4 col-md-6 col-12");
     const cardDiv = $("<div>");
     cardDiv.addClass("card shadow m-2").appendTo(columnDiv);
     const cardHeader = $("<div>");
@@ -843,12 +879,12 @@ const filterByCharacter = event => {
 
 const sortAllClips = () => {
   const sortItems = [...items];
-  if (items[0].id < 75) {
+  if (items[0].id < 79) {
     items.sort(sortById);
     $(".start").empty();
     layout(items);
     $(".sort").text("Show All by Name");
-  } else if (items[0].id >= 75) {
+  } else if (items[0].id >= 79) {
     items.sort(compare);
     $(".start").empty();
     layout(items);
