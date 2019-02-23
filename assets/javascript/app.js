@@ -540,7 +540,7 @@ const clip72 = new Clip(
   "Momma K",
   new Audio(`${path}confession.mp3`)
 );
-
+//wizzard cannot be newest clip until conditional bug is fixed
 //PUSH INTO ARRAY
 items.push(
   clip1,
@@ -814,12 +814,13 @@ const filterByCharacter = event => {
 };
 
 const sortAllClips = () => {
+  const sortItems = [...items];
   if (items[0].id < 72) {
     items.sort(sortById);
     $(".start").empty();
     layout(items);
     $(".sort").text("Show All by Name");
-  } else if (items[0].id >= 70) {
+  } else if (items[0].id >= 72) {
     items.sort(compare);
     $(".start").empty();
     layout(items);
