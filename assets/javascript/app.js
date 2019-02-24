@@ -591,6 +591,14 @@ const clip78 = new Clip(
 
 const clip79 = new Clip(
   79,
+  "Default",
+  "gamestuff",
+  "Wizzard",
+  new Audio(`${path}gamestuff.mp3`)
+);
+
+const clip80 = new Clip(
+  80,
   "Happy Birthday",
   "happybday",
   "Carrie",
@@ -678,7 +686,8 @@ items.push(
   clip76,
   clip77,
   clip78,
-  clip79
+  clip79,
+  clip80
 );
 
 //COMPARE FUNCTION FOR SORT
