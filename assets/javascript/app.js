@@ -920,12 +920,12 @@ const filterByCharacter = event => {
 
 const sortAllClips = () => {
   const sortItems = [...items];
-  if (items[0].id < 84) {
+  if (items[0].id < items.length - 1) {
     items.sort(sortById);
     $(".start").empty();
     layout(items);
     $(".sort").text("Show All by Name");
-  } else if (items[0].id >= 84) {
+  } else if (items[0].id >= items.length - 1) {
     items.sort(compare);
     $(".start").empty();
     layout(items);
