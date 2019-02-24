@@ -888,12 +888,12 @@ const filterByCharacter = event => {
 
 const sortAllClips = () => {
   const sortItems = [...items];
-  if (items[0].id < 79) {
+  if (items[0].id < 80) {
     items.sort(sortById);
     $(".start").empty();
     layout(items);
     $(".sort").text("Show All by Name");
-  } else if (items[0].id >= 79) {
+  } else if (items[0].id >= 80) {
     items.sort(compare);
     $(".start").empty();
     layout(items);
