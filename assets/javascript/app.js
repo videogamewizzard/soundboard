@@ -772,10 +772,6 @@ const layout = array => {
       $(".card").addClass(`bg-dark border-light`);
       $(".card-header").addClass("text-light");
     }
-    if ($("body").hasClass("bg-dark")) {
-      $(".card").addClass(`bg-dark border-light`);
-      $(".card-header").addClass("text-light");
-    }
     doExtra(item, cardDiv, cardHeader);
   });
 };
@@ -994,8 +990,8 @@ let speed = 62;
 
 function typeWriter() {
   if (i < txt.length) {
-    let getModalId = document.getElementById("typewriter");
-    getModalId.innerHTML += txt.charAt(i);
+    const modalId = $("#typewriter");
+    modalId.append(txt.charAt(i));
     i++;
     setTimeout(typeWriter, speed);
   }
