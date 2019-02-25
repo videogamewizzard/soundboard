@@ -33,6 +33,14 @@ button {
   text-align: center;
 }
 
+.badge:hover {
+  color: rgba(247, 247, 247, 0.445) !important;
+}
+
+.badge-light:hover {
+  color: rgba(56, 56, 56, 0.445) !important;
+}
+
 .card-body {
   display: inline-block;
   text-align: center;
