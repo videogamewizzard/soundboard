@@ -740,17 +740,17 @@ const sortById = (a, b) => {
 };
 
 const sortBy = (field, reverse, primer) => {
-  const key = primer
-    ? function(x) {
-        return primer(x[field]);
-      }
-    : function(x) {
-        return x[field];
-      };
+  const key = primer ?
+    function (x) {
+      return primer(x[field]);
+    } :
+    function (x) {
+      return x[field];
+    };
 
   reverse = !reverse ? 1 : -1;
 
-  return function(a, b) {
+  return function (a, b) {
     return (a = key(a)), (b = key(b)), reverse * ((a > b) - (b > a));
   };
 };
@@ -772,16 +772,21 @@ const capitalizeFirst = string => {
 //PRINT HTML
 const layout = array => {
   array.forEach(item => {
-    const { id, name, displayName, character } = item;
+    const {
+      id,
+      name,
+      displayName,
+      character
+    } = item;
     const columnDiv = $("<div>").addClass("col-lg-4 col-md-6 col-12");
     const cardDiv = $("<div>");
     cardDiv.addClass("card shadow m-2").appendTo(columnDiv);
     const cardHeader = $("<div>");
-    id > array.length - 12
-      ? cardHeader.html(
-          `${character} <div id="new" class="ml-1 badge badge-pill badge-warning">NEW</div>`
-        )
-      : cardHeader.text(character);
+    id > items.length - 12 ?
+      cardHeader.html(
+        `${character} <div id="new" class="ml-1 badge badge-pill badge-warning">NEW</div>`
+      ) :
+      cardHeader.text(character);
     cardHeader.addClass("card-header").appendTo(cardDiv);
     const cardBody = $("<div>");
     cardBody.addClass("card-body").appendTo(cardDiv);
@@ -789,7 +794,9 @@ const layout = array => {
     playButton
       .addClass("btn btn-primary animated btn-lg btn-block play")
       .val(name)
-      .attr({ data: "play" })
+      .attr({
+        data: "play"
+      })
       .html(
         `<i class="fas fa-play-circle ml-2"></i> ${capitalizeFirst(
           displayName
@@ -800,10 +807,13 @@ const layout = array => {
     pauseButton
       .addClass("btn btn-danger animated btn-lg btn-block stop")
       .val(name)
-      .attr({ data: "stop" })
+      .attr({
+        data: "stop"
+      })
       .html(`<i class="far fa-pause-circle ml-2"></i> Pause`)
       .appendTo(cardBody);
     $(".start").append(columnDiv);
+    $(".total-count").text(items.length)
     if ($("body").hasClass("bg-dark")) {
       $(".card").addClass(`bg-dark border-light`);
       $(".card-header").addClass("text-light");
@@ -829,8 +839,9 @@ $(document).on("click", ".stop", event => {
 //CLICK FUNCTION TO SORT DOM
 $(document).on("click", ".sort", event => {
   event.preventDefault();
-  sortAllClips();
+  sortAll(event);
 });
+
 //CLICK FUNCTION FOR RANDOM CLIP
 $(document).on("click", ".random", event => {
   event.preventDefault();
@@ -862,7 +873,6 @@ const checkTheme = () => {
     $("body, .card, .dropdown-menu").removeClass("bg-light");
     $(".navbar-brand, .card-header").removeClass("text-dark");
     $(".navbar").removeClass(`bg-light navbar-light`);
-    $(".name").removeClass("badge-secondary");
     $(".theme").removeClass("badge-dark");
     $(".extra").removeClass(`badge-light text-dark`);
 
@@ -872,7 +882,7 @@ const checkTheme = () => {
     $(".navbar").addClass(`navbar-dark bg-dark`);
     $(".card").addClass(`bg-dark border-light`);
     $(".theme").text("Light");
-    $(".theme, .name").addClass("badge-light");
+    $(".theme").addClass("badge-light");
     $(".extra").addClass(`badge-dark text-light`);
 
     //
@@ -881,7 +891,7 @@ const checkTheme = () => {
     $(".navbar-brand, .card-header").removeClass("text-light");
     $(".navbar").removeClass(`bg-dark navbar-dark`);
     $(".card").removeClass(`bg-dark border-light`);
-    $(".theme, .name").removeClass("badge-light");
+    $(".theme").removeClass("badge-light");
     $(".extra").removeClass(`badge-dark text-light`);
 
     //
@@ -891,22 +901,23 @@ const checkTheme = () => {
     $(".theme")
       .text("Dark")
       .addClass("badge-dark");
-    $(".name").addClass("badge-secondary");
     $(".extra").addClass(`badge-light text-dark`);
   }
 };
 
 const filterByCharacter = event => {
-  const { id } = event.target;
+  const {
+    id
+  } = event.target;
   const itemsClone = [...items];
   const filteredArray = itemsClone.filter(item => id == item.character);
   const guestArray = itemsClone.filter(
     item =>
-      id == "Other" &&
-      item.character != "Momma K" &&
-      item.character != "Wizzard" &&
-      item.character != "Lotto King" &&
-      item.character != "Laurel"
+    id == "Other" &&
+    item.character != "Momma K" &&
+    item.character != "Wizzard" &&
+    item.character != "Lotto King" &&
+    item.character != "Laurel"
   );
   $(".start").empty();
   if (id == "Other") {
@@ -918,26 +929,16 @@ const filterByCharacter = event => {
   }
 };
 
-const sortAllClips = () => {
-  const sortItems = [...items];
-  if (items[0].id < items.length) {
-    items.sort(sortById);
-    $(".start").empty();
-    layout(items);
-    $(".sort").text("Show All by Name");
-  } else if (items[0].id >= items.length) {
-    items.sort(compare);
-    $(".start").empty();
-    layout(items);
-    $(".sort").text("Show All By New");
-  }
-};
-
 const stopClip = event => {
   $(event.target).addClass("pulse fast");
-  const { value } = event.target;
+  const {
+    value
+  } = event.target;
   items.forEach(clip => {
-    const { name, audio } = clip;
+    const {
+      name,
+      audio
+    } = clip;
     if (name === value) {
       audio.pause();
     }
@@ -949,9 +950,14 @@ const stopClip = event => {
 
 const playClip = event => {
   $(event.target).addClass("pulse fast");
-  const { value } = event.target;
+  const {
+    value
+  } = event.target;
   items.forEach(clip => {
-    const { name, audio } = clip;
+    const {
+      name,
+      audio
+    } = clip;
     if (name === value) {
       audio.play();
     } else {
@@ -964,10 +970,11 @@ const playClip = event => {
 };
 
 const scrollToSend = event => {
-  const { value } = event.target;
+  const {
+    value
+  } = event.target;
   const className = `.${value}`;
-  $("html, body").animate(
-    {
+  $("html, body").animate({
       scrollTop: $(className).offset().top
     },
     500
@@ -975,9 +982,62 @@ const scrollToSend = event => {
   $("#navbarNav").collapse("hide");
 };
 
+const showTotalCount = () => {
+  const newItems = [...items]
+  const momma = newItems.filter(item => item.character == "Momma K");
+  const wizz = newItems.filter(item => item.character == "Wizzard");
+  const laurel = newItems.filter(item => item.character == "Laurel");
+  const lottoKing = newItems.filter(item => item.character == "Lotto King");
+  const guestArray = newItems.filter(
+    item =>
+    item.character != "Momma K" &&
+    item.character != "Wizzard" &&
+    item.character != "Lotto King" &&
+    item.character != "Laurel"
+  );
+  $(".total-momma").text(momma.length)
+  $(".total-aaron").text(wizz.length)
+  $(".total-laurel").text(laurel.length)
+  $(".total-lotto").text(lottoKing.length)
+  $(".total-guests").text(guestArray.length)
+}
+
+showTotalCount();
+
+const sortAll = event => {
+  const counter = `<span class="total-count badge badge-light">${items.length}</span><span class="sr-only">total</span>`
+  const {
+    value
+  } = event.target;
+  switch (value) {
+    case "sortbynew":
+      items.sort(sortById);
+      $(".start").empty();
+      layout(items);
+      $(".sort")
+        .text("Sort by Name ")
+        .val("sortbyname")
+        .append(counter)
+      break;
+    case "sortbyname":
+      items.sort(compare);
+      $(".start").empty();
+      layout(items);
+      $(".sort")
+        .text("Sort By New ")
+        .val("sortbynew")
+        .append(counter)
+      break;
+  }
+};
+
+
+
 //ADD LINKS TO HEADERS AND APPLY SCROLL CLASSES
 function doExtra(item, cardDiv, cardHeader) {
-  const { name } = item;
+  const {
+    name
+  } = item;
   if (name === "droopy") {
     const youTubeLink = $("<a>");
     youTubeLink.text("Lotto King").attr({
@@ -1036,7 +1096,7 @@ function typeWriter() {
 const keyArray = [],
   keyCode = "83,67,65,77";
 
-$(document).keydown(function(e) {
+$(document).keydown(function (e) {
   keyArray.push(e.keyCode);
 
   if (keyArray.toString().indexOf(keyCode) >= 0) {
