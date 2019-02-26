@@ -653,6 +653,38 @@ const clip86 = new Clip(
   new Audio(`${path}boogies-dick.mp3`)
 );
 
+const clip87 = new Clip(
+  87,
+  "336",
+  "336",
+  "Momma K",
+  new Audio(`${path}336.mp3`)
+);
+
+const clip88 = new Clip(
+  88,
+  "Sex",
+  "findman",
+  "Momma K",
+  new Audio(`${path}findman.mp3`)
+);
+
+const clip89 = new Clip(
+  89,
+  "Abstinence",
+  "abstinence",
+  "Momma K",
+  new Audio(`${path}abstinence.mp3`)
+);
+
+const clip90 = new Clip(
+  90,
+  "SUED!",
+  "sued",
+  "Momma K",
+  new Audio(`${path}sued.mp3`)
+);
+
 //wizzard cannot be newest clip until conditional bug is fixed
 //PUSH INTO ARRAY
 items.push(
@@ -741,7 +773,11 @@ items.push(
   clip83,
   clip84,
   clip85,
-  clip86
+  clip86,
+  clip87,
+  clip88,
+  clip89,
+  clip90
 );
 
 //COMPARE FUNCTION FOR SORT
@@ -758,17 +794,17 @@ const sortById = (a, b) => {
 };
 
 const sortBy = (field, reverse, primer) => {
-  const key = primer
-    ? function(x) {
-        return primer(x[field]);
-      }
-    : function(x) {
-        return x[field];
-      };
+  const key = primer ?
+    function (x) {
+      return primer(x[field]);
+    } :
+    function (x) {
+      return x[field];
+    };
 
   reverse = !reverse ? 1 : -1;
 
-  return function(a, b) {
+  return function (a, b) {
     return (a = key(a)), (b = key(b)), reverse * ((a > b) - (b > a));
   };
 };
@@ -790,16 +826,21 @@ const capitalizeFirst = string => {
 //PRINT HTML
 const layout = array => {
   array.forEach(item => {
-    const { id, name, displayName, character } = item;
+    const {
+      id,
+      name,
+      displayName,
+      character
+    } = item;
     const columnDiv = $("<div>").addClass("col-lg-4 col-md-6 col-12");
     const cardDiv = $("<div>");
     cardDiv.addClass("card shadow m-2").appendTo(columnDiv);
     const cardHeader = $("<div>");
-    id > items.length - 12
-      ? cardHeader.html(
-          `${character} <div id="new" class="ml-1 badge badge-pill badge-warning">NEW</div>`
-        )
-      : cardHeader.text(character);
+    id > items.length - 12 ?
+      cardHeader.html(
+        `${character} <div id="new" class="ml-1 badge badge-pill badge-warning">NEW</div>`
+      ) :
+      cardHeader.text(character);
     cardHeader.addClass("card-header").appendTo(cardDiv);
     const cardBody = $("<div>");
     cardBody.addClass("card-body").appendTo(cardDiv);
@@ -919,19 +960,21 @@ const checkTheme = () => {
 };
 
 const filterByCharacter = event => {
-  const { id } = event.target;
+  const {
+    id
+  } = event.target;
   const itemsClone = [...items];
-  const filteredArray = itemsClone.filter(item => id == item.character);
+  const filteredArray = itemsClone.filter(item => id === item.character);
   const guestArray = itemsClone.filter(
     item =>
-      id == "Other" &&
-      item.character != "Momma K" &&
-      item.character != "Wizzard" &&
-      item.character != "Lotto King" &&
-      item.character != "Laurel"
+    id === "Other" &&
+    item.character !== "Momma K" &&
+    item.character !== "Wizzard" &&
+    item.character !== "Lotto King" &&
+    item.character !== "Laurel"
   );
   $(".start").empty();
-  if (id == "Other") {
+  if (id === "Other") {
     guestArray.sort(compare);
     layout(guestArray);
   } else {
@@ -942,9 +985,14 @@ const filterByCharacter = event => {
 
 const stopClip = event => {
   $(event.target).addClass("pulse fast");
-  const { value } = event.target;
+  const {
+    value
+  } = event.target;
   items.forEach(clip => {
-    const { name, audio } = clip;
+    const {
+      name,
+      audio
+    } = clip;
     if (name === value) {
       audio.pause();
     }
@@ -956,9 +1004,14 @@ const stopClip = event => {
 
 const playClip = event => {
   $(event.target).addClass("pulse fast");
-  const { value } = event.target;
+  const {
+    value
+  } = event.target;
   items.forEach(clip => {
-    const { name, audio } = clip;
+    const {
+      name,
+      audio
+    } = clip;
     if (name === value) {
       audio.play();
     } else {
@@ -971,10 +1024,11 @@ const playClip = event => {
 };
 
 const scrollToSend = event => {
-  const { value } = event.target;
+  const {
+    value
+  } = event.target;
   const className = `.${value}`;
-  $("html, body").animate(
-    {
+  $("html, body").animate({
       scrollTop: $(className).offset().top
     },
     500
@@ -984,16 +1038,16 @@ const scrollToSend = event => {
 
 const showTotalCount = () => {
   const newItems = [...items];
-  const momma = newItems.filter(item => item.character == "Momma K");
-  const wizz = newItems.filter(item => item.character == "Wizzard");
-  const laurel = newItems.filter(item => item.character == "Laurel");
-  const lottoKing = newItems.filter(item => item.character == "Lotto King");
+  const momma = newItems.filter(item => item.character === "Momma K");
+  const wizz = newItems.filter(item => item.character === "Wizzard");
+  const laurel = newItems.filter(item => item.character === "Laurel");
+  const lottoKing = newItems.filter(item => item.character === "Lotto King");
   const guestArray = newItems.filter(
     item =>
-      item.character != "Momma K" &&
-      item.character != "Wizzard" &&
-      item.character != "Lotto King" &&
-      item.character != "Laurel"
+    item.character !== "Momma K" &&
+    item.character !== "Wizzard" &&
+    item.character !== "Lotto King" &&
+    item.character !== "Laurel"
   );
   $(".total-momma").text(momma.length);
   $(".total-aaron").text(wizz.length);
@@ -1008,7 +1062,9 @@ const sortAll = event => {
   const counter = `<span class="total-count badge badge-light">${
     items.length
   }</span><span class="sr-only">total</span>`;
-  const { value } = event.target;
+  const {
+    value
+  } = event.target;
   switch (value) {
     case "sortbynew":
       items.sort(sortById);
@@ -1033,7 +1089,9 @@ const sortAll = event => {
 
 //ADD LINKS TO HEADERS AND APPLY SCROLL CLASSES
 function doExtra(item, cardDiv, cardHeader) {
-  const { name } = item;
+  const {
+    name
+  } = item;
   if (name === "droopy") {
     const youTubeLink = $("<a>");
     youTubeLink.text("Lotto King").attr({
@@ -1092,7 +1150,7 @@ function typeWriter() {
 const keyArray = [],
   keyCode = "83,67,65,77";
 
-$(document).keydown(function(e) {
+$(document).keydown(function (e) {
   keyArray.push(e.keyCode);
 
   if (keyArray.toString().indexOf(keyCode) >= 0) {
