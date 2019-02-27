@@ -693,6 +693,22 @@ const clip91 = new Clip(
   new Audio(`${path}deaddogpie.mp3`)
 );
 
+const clip92 = new Clip(
+  92,
+  "Twilight Files",
+  "twilightfiles",
+  "Wizzard",
+  new Audio(`${path}twilightfiles.mp3`)
+);
+
+const clip93 = new Clip(
+  93,
+  "Bitch Ass",
+  "bitchass",
+  "Laurel",
+  new Audio(`${path}bitchass.mp3`)
+);
+
 //wizzard cannot be newest clip until conditional bug is fixed
 //PUSH INTO ARRAY
 items.push(
@@ -786,7 +802,9 @@ items.push(
   clip88,
   clip89,
   clip90,
-  clip91
+  clip91,
+  clip92,
+  clip93
 );
 
 //COMPARE FUNCTION FOR SORT
