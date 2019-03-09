@@ -1,6 +1,6 @@
-$(document).ready(function() {
-  $(".toast").toast("show");
-});
+// $(document).ready(function() {
+//   $(".toast").toast("show");
+// });
 
 const path = "assets/clips/";
 
@@ -729,6 +729,38 @@ const clip95 = new Clip(
   new Audio(`${path}yiffing.mp3`)
 );
 
+const clip96 = new Clip(
+  96,
+  "Null & Void",
+  "void",
+  "Wizzard",
+  new Audio(`${path}void.mp3`)
+);
+
+const clip97 = new Clip(
+  97,
+  "Illegal",
+  "babysit",
+  "Wizzard",
+  new Audio(`${path}babysit.mp3`)
+);
+
+const clip98 = new Clip(
+  98,
+  "Sack of Shit",
+  "sackofshit",
+  "Wizzard",
+  new Audio(`${path}sackofshit.mp3`)
+);
+
+const clip99 = new Clip(
+  99,
+  "True Love",
+  "love",
+  "Wizzard",
+  new Audio(`${path}love.mp3`)
+);
+
 //wizzard cannot be newest clip until conditional bug is fixed
 //PUSH INTO ARRAY
 items.push(
@@ -826,7 +858,11 @@ items.push(
   clip92,
   clip93,
   clip94,
-  clip95
+  clip95,
+  clip96,
+  clip97,
+  clip98,
+  clip99
 );
 
 //COMPARE FUNCTION FOR SORT
