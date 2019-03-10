@@ -761,6 +761,61 @@ const clip99 = new Clip(
   new Audio(`${path}love.mp3`)
 );
 
+const clip100 = new Clip(
+  100,
+  "Bob",
+  "bob",
+  "Wizzard",
+  new Audio(`${path}bob.mp3`)
+);
+
+const clip101 = new Clip(
+  101,
+  "Abuse",
+  "abuse",
+  "Laurel",
+  new Audio(`${path}abuse.mp3`)
+);
+
+const clip102 = new Clip(
+  102,
+  "Simon & Karfunkle",
+  "karfunkle",
+  "Wizzard",
+  new Audio(`${path}karfunkle.mp3`)
+);
+
+const clip103 = new Clip(
+  103,
+  "Ebonics",
+  "kspeak",
+  "Krazy K",
+  new Audio(`${path}kspeak.mp3`)
+);
+
+const clip104 = new Clip(
+  104,
+  "Truth",
+  "truth",
+  "Momma K",
+  new Audio(`${path}truth.mp3`)
+);
+
+const clip105 = new Clip(
+  105,
+  "Drug Dealer",
+  "drug-dealer",
+  "Momma K",
+  new Audio(`${path}drug-dealer.mp3`)
+);
+
+const clip106 = new Clip(
+  106,
+  "Babble?",
+  "babble",
+  "Momma K",
+  new Audio(`${path}babble.mp3`)
+);
 //wizzard cannot be newest clip until conditional bug is fixed
 //PUSH INTO ARRAY
 items.push(
@@ -862,7 +917,14 @@ items.push(
   clip96,
   clip97,
   clip98,
-  clip99
+  clip99,
+  clip100,
+  clip101,
+  clip102,
+  clip103,
+  clip104,
+  clip105,
+  clip106
 );
 
 //COMPARE FUNCTION FOR SORT
